@@ -1,0 +1,259 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Completed Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <style>
+        body {
+            background-color:black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        .steel-text {
+            color: transparent;
+            background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            font-size: 2rem;
+        }
+
+        .navbar {
+            background-color:black;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Ensure navbar contents stay within the viewport */
+            z-index: 999; /* Ensure navbar is above other elements */
+        }
+
+
+        .navbar-nav {
+            justify-content: flex-end;
+        }
+
+        .nav-item:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .navbar-brand {
+            margin-left: 0;
+        }
+
+
+.card {
+    background-color: black;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    color: white;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 128, 0.5);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+    width: auto;
+    max-width: 80%;
+}
+
+.card-title {
+    padding: 2px;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+.card-text {
+    padding: 2px;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.button-group {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Adjust padding if needed */
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+@media (max-width: 370.98px) {
+    .steel-text {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        height: 250px;
+    }
+
+    .card-title, .card-text {
+        font-size: 0.75rem;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+
+    .button-group {
+        bottom: 10px;
+        padding: 5px; /* Adjust padding if needed */
+    }
+
+    .btn {
+        padding: 3px 3px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .steel-text {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        height: 250px;
+    }
+
+    .card-title, .card-text {
+        font-size: 0.875rem;
+    }
+}
+    </style>
+</head>
+<body>
+<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 py-lg-0 mx-0">
+        <div class="container-fluid">
+            <a href="" class="navbar-brand">
+                <h1 class="steel-text">COVER PHOTO</h1>
+            </a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle mr-2" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Upload
+                    </a>
+                    <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'cadapp:addcomplete' %}">COMPLETED PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'cadapp:addincomplete' %}">ONGOING PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:uploadlead' %}">LEAD PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:uploadinterior' %}">INTERIOR WORK</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle mr-2" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        View
+                    </a>
+                    <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="{% url 'cadapp:viewcomplete' %}">COMPLETED PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'cadapp:viewincomplete' %}">ONGOING PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:editlead' %}">LEAD PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:editinterior' %}">INTERIOR WORKS</a>
+                        <a class="dropdown-item" href="{% url 'credential:updatemain' %}">LEAD PROJECT COVER</a>
+                    </div>
+                </div>
+                <a href="{% url 'credential:index' %}" class="nav-item nav-link active mr-2">Home</a>
+                <a href="{% url 'credential:dashboard' %}" class="nav-item nav-link active mr-2">Admin</a>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid">
+
+       {% for i in main_list %}
+        <div class="col-md-4 col-sm-6 mb-3 mt-3">
+            <div class="card"style="height:490px;">
+                <div id="carousel-{{ i.id }}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner"style="height:490px;">
+                        <div class="carousel-item active">
+                            <img src="{{ i.luximg.url }}" class="d-block w-100" alt="Image 1">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="{{ i.luximgs.url }}" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ i.luximgss.url }}" class="d-block w-100" alt="Image 3">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ i.id }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ i.id }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary btn-sm mb-1" onclick="editLux({{ i.id }})">Edit</button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+<script>
+    function editLux(id) {
+        window.location.href = `/editmain/${id}/`;
+    }
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/lib/easing/easing.min.js"></script>
+<script src="/static/lib/waypoints/waypoints.min.js"></script>
+<script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+<!-- Template Javascript -->
+<script src="/static/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

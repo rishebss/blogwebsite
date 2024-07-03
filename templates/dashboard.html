@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <style>
+        body {
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+        .navbar {
+            background-color: black
+        }
+        .steel-text {
+            color: transparent;
+            background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+        .card {
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+        .card .card-header, .card .list-group-item {
+            color: black; /* Ensure the text is visible */
+        }
+        .dropdown-menu {
+            background-color: white;
+        }
+        .dropdown-item {
+            color: #333;
+        }
+        @media (min-width: 768px) {
+            .navbar-nav {
+                margin-left: auto;
+            }
+        }
+        @media (min-width: 992px) {
+            .container {
+                width: 80%;
+                margin: auto;
+            }
+            .navbar-brand h1 {
+                font-size: 50px;
+            }
+            .steel-text {
+                font-size: 25px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .col-md-10 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .navbar-brand h1 {
+                font-size: 30px;
+            }
+            .steel-text {
+                font-size: 20px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .card {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <a  class="navbar-brand">
+            <h1 class="steel-text">ADMIN PANEL</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle mr-2" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Upload
+                    </a>
+                    <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'cadapp:addcomplete' %}">COMPLETED PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'cadapp:addincomplete' %}">ONGOING PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:uploadlead' %}">LEAD PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:uploadinterior' %}">INTERIOR WORK</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle mr-2" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        View
+                    </a>
+                    <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="{% url 'cadapp:viewcomplete' %}">COMPLETED PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'cadapp:viewincomplete' %}">ONGOING PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:editlead' %}">LEAD PROJECTS</a>
+                        <a class="dropdown-item" href="{% url 'credential:editinterior' %}">INTERIOR WORKS</a>
+                        <a class="dropdown-item" href="{% url 'credential:updatemain' %}">LEAD PROJECT COVER</a>
+                    </div>
+                </div>
+                <a href="{% url 'credential:index' %}" class="nav-item nav-link active mr-2">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<h3 class="steel-text mt-4 text-center">ENQUIRIES</h3>
+<div class="container col-md-10 mb-5">
+    {% for i in enquiry_list %}
+        <div class="card mb-2">
+            <div class="card-header bg-dark text-white text-uppercase mb-1">
+                {{i.name}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item mb-1"><strong>Email:</strong> <a href="mailto:{{i.email}}" class="btn btn-link" id="copyEmail">{{i.email}}</a></li>
+                <li class="list-group-item mb-1">
+                <strong>Phone:</strong>
+                <a href="tel:{{ i.phone }}" class="text-decoration-none">{{ i.phone }}</a>
+                </li>
+                <li class="list-group-item mb-2"><strong>Message:</strong> {{i.message}}</li>
+            </ul>
+            <div class="d-flex justify-content-start ml-2 mb-1">
+                <button class="btn btn-secondary btn-sm mt-2" style="width:50px;" onclick="copyCardInfo('{{i.name}}', '{{i.email}}', '{{i.phone}}', '{{i.message}}')"><i class="fa-solid fa-clipboard"></i></button>
+                <button class="btn btn-danger btn-sm mt-2 ml-3" style="width:50px;" onclick="deleteEnquiry('{{i.id}}')"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+     function editLux(id) {
+        window.location.href = `/updatemain/${id}/`;
+    }
+    function copyCardInfo(name, email, phone, message) {
+        var info = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\nMessage: " + message;
+        var dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = info;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+        alert("Card information copied to clipboard:\n" + info);
+    }
+
+    function deleteEnquiry(taskId) {
+        if (confirm("Are you sure you want to delete this enquiry?")) {
+            fetch(`/delete/${taskId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    alert("Error deleting enquiry");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/lib/easing/easing.min.js"></script>
+<script src="/static/lib/waypoints/waypoints.min.js"></script>
+<script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,825 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CADD ALL -  Construction Company Website Template Free</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Favicon -->
+    <link href="static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<style>
+    body {
+<!--background-image: url('{% static "img/bg2.jpg" %}');-->
+width:208vh;
+height:200vh;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+font-size: 16px;
+}
+.navbar-nav {
+        width: 90%;
+        justify-content: flex-end;
+    }
+.nav-item:not(:last-child) {
+    margin-right: 20px;
+    }
+@media only screen and(max-width:800px){
+    .body{
+    width:90%;
+    height:90;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 display-4 text-uppercase steel-text"><i class="bi bi-building text-primary me-2"></i>CADD ALL</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="margin-right:0;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active steel-text">Home</a>
+<!--                    <a href="about.html" class="nav-item nav-link">About</a>-->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
+                            <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">On Going Projects</a>
+                             <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Works</a>
+
+                        </div>
+
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">contact</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="tel:+919847109706" class="dropdown-item">Call Us</a>
+                            <a href="mailto:Caddall2003@gmail.com" class="dropdown-item">Mail US</a>
+                            <a href="https://www.google.com/maps/place/caddall+constructions,Ernakulam,+39%2F5489,Moins+Shopping+Complex+Manorama+Junction,+Panampilly+Nagar,+Kochi,+Kerala+682036/@9.9654437,76.2942781,16z/data=!4m6!3m5!1s0x3b0872b840000001:0xf9abb4d0f368cda1!8m2!3d9.9654437!4d76.2942781!16s%2Fg%2F11gfw10jr4" class="dropdown-item">Location</a>
+
+                        </div>
+
+                    </div>
+<!--                    <a href="contact.html" class="nav-item nav-link" style="margin-right: 25px;">Blog</a>-->
+
+
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <style>
+        .steel-text {
+        color: transparent; /* Hide the text */
+        background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%); /* Steel-like gradient */
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); /* Shadow for depth effect */
+
+    }
+    </style>
+    <!-- Navbar End -->
+<style>
+        /* Style the popup */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item ">
+                    <img class="w-100" src="static/img/caddall1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your<span class="text-primary"> Dream</span> Home With Us</h1>
+<!--                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Get A Quote</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/caddall2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">We Are <span class="text-primary">Trusted</span> For Your Project</h1>
+<!--                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Contact Us</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+
+
+
+<div class="container">
+        <div class="center-box">
+            <h1 class="display-5 text-uppercase text-dark text-center">We are here to build your <span class="text-primary">dream</span></h1>
+            <h4 class="text-uppercase mb-1 text-body text-center">Our expertise ensures your vision becomes reality</h4>
+
+            <div class="expertise-row">
+                <div class="expertise-item fw-bold">
+                    <i class="fa fa-check text-primary"></i>ARCHITECTURE DESIGN
+                </div>
+                <div class="expertise-item fw-bold">
+                    <i class="fa fa-check text-primary"></i>INTERIOR DESIGN
+                </div>
+                <div class="expertise-item fw-bold">
+                    <i class="fa fa-check text-primary"></i>CONSTRUCTION
+                </div>
+                <div class="expertise-item fw-bold">
+                    <i class="fa fa-check text-primary"></i>RENOVATION
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .center-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        .expertise-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .expertise-item {
+            flex: 1 1 45%;
+            margin: 10px;
+            text-align: center;
+        }
+        .expertise-item i {
+            margin-right: 10px;
+        }
+    </style>
+
+
+<div class="container-fluid bg-light py-4 px-3">
+    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+        <h1 class="display-5 text-dark">WE PROVIDE <span class="text-primary">THE BEST</span> CONSTRUCTION SERVICES</h1>
+    </div>
+    <div class="row g-5">
+        <div class="col-lg-6 col-md-6">
+            <div class="service-item bg-white d-flex flex-column align-items-center text-center" style="border-radius: 5px;">
+                <img class="img-fluid fixed-image-height" src="static/img/ongoingcover2.jpg" alt="">
+                <div class="service-icon bg-white">
+                    <i class="fa fa-3x fa-building text-primary"></i>
+                </div>
+                <div class="px-4 pb-4">
+                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>ON GOING PROJECTS</h5>
+                    <a class="btn text-primary" href="{% url 'cadapp:incomplete' %}">VIEW <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center" style="border-radius: 30px;">
+                <img class="img-fluid fixed-image-height" src="static/img/completed1.jpg" alt="">
+                <div class="service-icon bg-white">
+                    <i class="fa fa-3x fa-home text-primary"></i>
+                </div>
+                <div class="px-4 pb-4">
+                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>COMPLETED PROJECTS</h5>
+                    <a class="btn text-primary ml-2" href="{% url 'cadapp:complete' %}">VIEW <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="service-item bg-white d-flex flex-column align-items-center text-center" style="border-radius: 5px;">
+                <img class="img-fluid fixed-image-height" src="static/img/interiorcover.jpg" alt="">
+                <div class="service-icon bg-white">
+                    <i class="fa fa-3x fa-palette text-primary"></i>
+                </div>
+                <div class="px-4 pb-4">
+                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>INTERIORS</h5>
+                    <a class="btn text-primary" href="{% url 'credential:viewinterior' %}">VIEW <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 position-relative">
+    <!-- Bootstrap Carousel -->
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel"style="box-shadow: 0 0 15px 5px rgba(255, 160, 0, 0.8);border-radius: 10px;">
+        <div class="carousel-inner">
+            {% for i in main_list %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximg.url }}'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgs.url }}'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgss.url }}'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Fixed "LEAD PROJECTS" Card -->
+    <div class="service-item d-flex flex-column align-items-center text-center lead-project-card" style="position: absolute; bottom: 1px; width: 40%; background: rgba(0, 0, 0, 0.8); border: 2px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px;">
+        <h5 class="gold-text mb-2"><i class="bi bi-building text-primary me-2"></i>LEAD PROJECTS</h5>
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-sm Btn-premium" data-toggle="modal" data-target="#leadProjectModal" style="padding:5px;">
+            View
+        </button>
+    </div>
+<style>
+    .Btn-premium {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+.Btn-premium::before {
+  position: absolute;
+  content: "VIEW";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btn-premium:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn-premium:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn-premium:active {
+  transform: scale(0.95);
+}
+</style>
+    <div class="modal fade" id="leadProjectModal" tabindex="-1" role="dialog" aria-labelledby="leadProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content"style="border-radius:10px;">
+                <div class="modal-header">
+                    <h3 class="modal-title gold-text" id="leadProjectModalLabel" style="margin-left:50px;">LEAD PROJECTS</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"style=" max-height: 60vh;overflow-y: auto;scrollbar-width: none;">
+                    <div class="container">
+                        {% for lead in lead_list %}
+                            <div class="lead-item">
+
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <img src="{{ lead.photo.url }}" alt="Photo" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <img src="{{ lead.photo1.url }}" alt="Photo1" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <img src="{{ lead.photo2.url }}" alt="Photo2" class="img-fluid">
+                                    </div>
+                                    {% if lead.photooptional %}
+                                <div class="col-md-4 mb-3">
+                                    <img src="{{ lead.photooptional.url }}" alt="Photooptional" class="img-fluid">
+                                </div>
+                                {% endif %}
+                                {% if lead.photooptional1 %}
+                                <div class="col-md-4 mb-3">
+                                    <img src="{{ lead.photooptional1.url }}" alt="Photooptional1" class="img-fluid">
+                                </div>
+                                {% endif %}
+                                {% if lead.photooptional2 %}
+                                <div class="col-md-4 mb-3">
+                                    <img src="{{ lead.photooptional2.url }}" alt="Photooptional2" class="img-fluid">
+                                </div>
+                                {% endif %}
+                                </div>
+                                <h4 class="steel-text">{{ lead.luxtitle }}</h4>
+                                <p><strong>Location:</strong> {{ lead.luxloc }}</p>
+                                <p>{{ lead.luxdesc }}</p>
+                                <hr>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+</div>
+<style>
+    .fixed-image-height {
+    height: 350px; /* Set a fixed height for the images */
+    width: 100%; /* Ensure the images take up the full width of their containers */
+    object-fit: cover; /* Preserve aspect ratio while covering the entire container */
+    }
+     .gold-text {
+        font-family: 'Luminari', fantasy;
+        background: linear-gradient(145deg, #FFD700, #FFC107); /* Gradient gold color */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 3D effect */
+        font-weight: bold;
+    }
+</style>
+
+    <!-- Appointment Start -->
+    <div class="container-fluid py-6 px-0">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="card2 mt-5">
+  <div class="tools">
+    <div class="circle">
+      <span class="red box"></span>
+    </div>
+    <div class="circle">
+      <span class="yellow box"></span>
+    </div>
+    <div class="circle">
+      <span class="green box"></span>
+    </div>
+  </div>
+  <div class="card__content">
+      <p class="title text-grey">MESSAGE US</p>
+    <hr>
+    <p class="content-justify text-grey ml-3">Message us on WhatsApp or fill the form for a call back/reply mail.
+    </p>
+    <p class="content-justify text-grey ml-3">
+        We will reach out soon....
+    </p>
+
+  </div>
+  <a href="https://wa.me/919847109706" class="button2">
+    WhatsApp
+    <svg viewBox="0 0 48 48" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z" fill="#fff"></path>
+        <path d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z" fill="#fff"></path>
+        <path d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z" fill="#cfd8dc"></path>
+        <path d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z" fill="#40c351"></path>
+        <path clip-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" fill-rule="evenodd" fill="#fff"></path>
+    </svg>
+</a>
+
+</div>
+<style>
+    .button2 {
+  margin-right:50px;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 3.3em 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.button2 > svg {
+  height: 30px;
+  position: absolute;
+  padding: 0px 5px;
+  margin-top: -4px;
+}
+
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+    .card2 {
+  width: 290px;
+  height: 314px;
+  margin: 0 auto;
+  background-color: #f4f4f3;
+  border-radius: 8px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card2::after {
+  position: absolute;
+  content: '';
+  background-color: #454a50;
+  width: 50px;
+  height: 100px;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  border-radius: 8px;
+  background: #454a50;
+  margin-top: -2px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.card2__content {
+  height: 100%;
+  margin: 0px;
+  border-radius: 8px;
+  background: #f4f4f3;
+  padding: 20px;
+}
+
+.title {
+  font-size: 20px;
+  height:40px;
+  margin-left:70px;
+  margin-top:10px;
+}
+
+.content-justify {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+</style>
+
+
+            </div>
+            <div class="col-lg-8" style="background-color: rgba(128, 128, 128, 0.4);border-radius:30px;width:60rem;">
+                <div class="bg-primary-subtle text-center p-5"style="border-radius: 30px;">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text bg-light" name="name" class="form-control border-0" placeholder="Your Name" style="background-color: white; height: 55px;border-radius:20px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" name="email" class="form-control border-0" placeholder="Your Email" style="background-color: white; height: 55px;border-radius:20px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="phone" class="form-control border-0 da" placeholder="Your Phone.No" style="background-color: white; height: 55px;border-radius:20px;">
+
+                            </div>
+
+
+                            <div class="col-12">
+                                <textarea class="form-control border-0" name="message" rows="5" placeholder="Message"style="background-color: white;border-radius:20px;"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" style="border-radius:20px;">Submit Enquiry</button>
+                            </div>
+                        </div>
+                    </>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .button2 {
+  margin-left:30px;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 3.3em 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.button2 > svg {
+  height: 30px;
+  position: absolute;
+  padding: 0px 5px;
+  margin-top: -4px;
+}
+
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+</style>
+
+
+
+    
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+        <div class="row g-5">
+            <div class="col-lg-6 pe-lg-5">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 display-4 text-uppercase steel-text"><i class="bi bi-building text-primary me-2"></i>CADDALL</h1>
+                </a>
+                <p><i class="fa fa-map-marker-alt me-2"></i>panambily nagar,kochi</p>
+                <p><i class="fa fa-phone-alt me-2"></i>+91 9847109706</p>
+                <p><i class="fa fa-envelope me-2"></i>Caddall2003@gmail.com</p>
+<!--                <div class="d-flex justify-content-start mt-4">-->
+<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>-->
+<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-linkedin-in"></i></a>-->
+<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                </div>-->
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white-50 mb-2" href="{% url 'credential:index' %}"><i class="fa fa-angle-right me-2"></i>Top</a>
+                            <a class="text-white-50 mb-2" href="{% url 'credential:viewinterior' %}"><i class="fa fa-angle-right me-2"></i>Interior Gallery</a>
+                            <a class="text-white-50 mb-2" href="tel:+91 9847109706"><i class="fa fa-angle-right me-2"></i>Call Us</a>
+                            <a class="text-white-50" href="mailto:Caddall2003@gmail.com"><i class="fa fa-angle-right me-2"></i>Mail Us</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="py-4 px-5 text-center text-md-start">
+                <p class="mb-0">&copy; <a class="text-primary" href="#"> caddall</a>. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/staticlib/easing/easing.min.js"></script>
+    <script src="/staticlib/waypoints/waypoints.min.js"></script>
+    <script src="/staticlib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/staticlib/tempusdominus/js/moment.min.js"></script>
+    <script src="/staticlib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/staticlib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="/staticlib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/staticlib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/staticjs/main.js"></script>
+</body>
+
+</html>

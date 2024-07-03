@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        .steel-text {
+            color: transparent;
+            background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            font-size: 2rem;
+        }
+
+        .navbar {
+            background-color:black;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Ensure navbar contents stay within the viewport */
+            z-index: 999; /* Ensure navbar is above other elements */
+        }
+
+        .navbar-nav {
+            justify-content: flex-start; /* Align items to the left */
+            flex-grow: 1; /* Grow to take up remaining space */
+        }
+
+        .nav-item:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .navbar-brand {
+            margin-left: 0;
+        }
+
+        .card {
+            border-radius: 10px;
+            background-color: black;
+            color: black;
+            box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.75); /* Glowing gold shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            height: 200px;
+            object-fit: contain; /* Ensure the entire image is visible */
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 100px; /* Set a maximum height */
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: auto;
+        }
+
+        .btn {
+            margin-right: 10px;
+            flex: 1; /* Ensure buttons have the same width */
+        }
+
+        @media (max-width: 767.98px) {
+            .navbar {
+                justify-content: space-between;
+            }
+
+            .navbar-collapse {
+                width: 100%;
+                background-color:black;
+            }
+
+            .navbar-nav {
+                margin-top: 1rem;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .card-text {
+                font-size: 0.875rem;
+            }
+
+            .btn {
+                padding: 5px 10px;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 py-lg-0 mx-0">
+        <div class="container-fluid">
+            <a href="" class="navbar-brand">
+                <h1 class="steel-text">LEAD PROJECTS</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <div class="navbar-nav justify-content-end">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle mr-2 " id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Upload
+                        </a>
+                        <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'cadapp:addcomplete' %}">COMPLETED PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'cadapp:addincomplete' %}">ONGOING PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'credential:uploadlead' %}">LEAD PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'credential:uploadinterior' %}">INTERIOR WORK</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle mr-2" id="navbarDropdown2" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            View
+                        </a>
+                        <div class="dropdown-menu dropdown-animation" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="{% url 'cadapp:viewcomplete' %}">COMPLETED PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'cadapp:viewincomplete' %}">ONGOING PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'credential:editlead' %}">LEAD PROJECTS</a>
+                            <a class="dropdown-item" href="{% url 'credential:editinterior' %}">INTERIOR WORKS</a>
+                            <a class="dropdown-item" href="{% url 'credential:updatemain' %}">LEAD PROJECT COVER</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'credential:index' %}" class="nav-item nav-link active mr-4">Home</a>
+                    <a href="{% url 'credential:dashboard' %}" class="nav-item nav-link active">Admin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        {% for i in lead_list %}
+        <div class="col-md-4 col-sm-6 mb-3 mt-3">
+            <div class="card">
+                <div id="carousel-{{ i.id }}" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% if i.photo %}
+                        <div class="carousel-item active">
+                            <img src="{{ i.photo.url }}" class="d-block w-100" alt="Photo">
+                        </div>
+                        {% endif %}
+                        {% if i.photo1 %}
+                        <div class="carousel-item">
+                            <img src="{{ i.photo1.url }}" class="d-block w-100" alt="Photo1">
+                        </div>
+                        {% endif %}
+                        {% if i.photo2 %}
+                        <div class="carousel-item">
+                            <img src="{{ i.photo2.url }}" class="d-block w-100" alt="Photo2">
+                        </div>
+                        {% endif %}
+                        {% if i.photooptional %}
+                        <div class="carousel-item">
+                            <img src="{{ i.photooptional.url }}" class="d-block w-100" alt="PhotoOptional">
+                        </div>
+                        {% endif %}
+                        {% if i.photooptional1 %}
+                        <div class="carousel-item">
+                            <img src="{{ i.photooptional1.url }}" class="d-block w-100" alt="PhotoOptional1">
+                        </div>
+                        {% endif %}
+                        {% if i.photooptional2 %}
+                        <div class="carousel-item">
+                            <img src="{{ i.photooptional2.url }}" class="d-block w-100" alt="PhotoOptional2">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-{{ i.id }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-{{ i.id }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-white">{{ i.luxtitle }}</h5>
+                    <p class="card-text text-white">{{ i.luxloc }}</p>
+                    <p class="card-text text-white"style="scrollbar-width:none;">{{ i.luxdesc }}</p>
+                    <div class="button-group">
+                        <button class="btn btn-primary btn-sm" onclick="updateLead({{ i.id }})"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteLead({{ i.id }})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+    function updateLead(id) {
+        window.location.href = `/updatelead/${id}/`;
+    }
+
+    function deleteLead(id) {
+        if (confirm("Are you sure you want to delete this project?")) {
+            fetch(`/deletelead/${id}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    alert("Error deleting project");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    }
+</script>
+</body>
+</html>
