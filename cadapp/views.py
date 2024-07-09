@@ -27,7 +27,7 @@ def addcomplete(request):
         photooptional2 = request.FILES.get('photooptional2')
         completeproject = Complete(pic=pic,title=title,location=location,photo=photo,photo1=photo1,photo2=photo2,photooptional=photooptional,photooptional1=photooptional1,photooptional2=photooptional2)
         completeproject.save()
-        return redirect('/dashboard')
+        return redirect('credential:dashboard')
     return render(request,'addcomplete.html')
 def addincomplete(request):
     if request.method=="POST":
@@ -42,7 +42,7 @@ def addincomplete(request):
         photooptional2 = request.FILES.get('photooptional2')
         incompleteproject = Incomplete(picture=picture,heading=heading,place=place,photo=photo,photo1=photo1,photo2=photo2,photooptional=photooptional,photooptional1=photooptional1,photooptional2=photooptional2)
         incompleteproject.save()
-        return redirect('/dashboard')
+        return redirect('credential:dashboard')
     return render(request,'addincomplete.html')
 def incomplete(request):
     ongoing=Incomplete.objects.all().order_by('-created_at')
@@ -92,3 +92,8 @@ def updateincomplete(request, id):
             return redirect('cadapp:viewincomplete')  # Redirect to wherever you want after successful update
         # If form is not valid, render the edit page with form errors
     return render(request, 'edit2.html', {'form': form, 'incomplete': incomplete})
+
+def demo(request):
+    complete = Complete.objects.all().order_by('-created_at')
+    context = {'completed_list': complete}
+    return render(request, 'demo.html', context)

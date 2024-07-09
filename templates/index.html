@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CADD ALL -  Construction Company Website Template Free</title>
+    <title>CADDALL CONSTRUCTIONS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -42,81 +42,20 @@
 <style>
     body {
 <!--background-image: url('{% static "img/bg2.jpg" %}');-->
+
 width:208vh;
 height:200vh;
+background-color:black;
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
 font-size: 16px;
 }
-.navbar-nav {
-        width: 90%;
-        justify-content: flex-end;
-    }
-.nav-item:not(:last-child) {
-    margin-right: 20px;
-    }
-@media only screen and(max-width:800px){
-    .body{
-    width:90%;
-    height:90;
-    }
+
 </style>
 
 <body>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
-        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
-            <a href="" class="navbar-brand">
-                <h1 class="m-0 display-4 text-uppercase steel-text"><i class="bi bi-building text-primary me-2"></i>CADD ALL</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="margin-right:0;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active steel-text">Home</a>
-<!--                    <a href="about.html" class="nav-item nav-link">About</a>-->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
-                            <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">On Going Projects</a>
-                             <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Works</a>
-
-                        </div>
-
-                    </div>
-                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">contact</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="tel:+919847109706" class="dropdown-item">Call Us</a>
-                            <a href="mailto:Caddall2003@gmail.com" class="dropdown-item">Mail US</a>
-                            <a href="https://www.google.com/maps/place/caddall+constructions,Ernakulam,+39%2F5489,Moins+Shopping+Complex+Manorama+Junction,+Panampilly+Nagar,+Kochi,+Kerala+682036/@9.9654437,76.2942781,16z/data=!4m6!3m5!1s0x3b0872b840000001:0xf9abb4d0f368cda1!8m2!3d9.9654437!4d76.2942781!16s%2Fg%2F11gfw10jr4" class="dropdown-item">Location</a>
-
-                        </div>
-
-                    </div>
-<!--                    <a href="contact.html" class="nav-item nav-link" style="margin-right: 25px;">Blog</a>-->
-
-
-
-                </div>
-            </div>
-        </nav>
-    </div>
-    <style>
-        .steel-text {
-        color: transparent; /* Hide the text */
-        background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%); /* Steel-like gradient */
-        -webkit-background-clip: text;
-        background-clip: text;
-        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); /* Shadow for depth effect */
-
-    }
-    </style>
-    <!-- Navbar End -->
 <style>
         /* Style the popup */
         #popup {
@@ -144,81 +83,433 @@ font-size: 16px;
             z-index: 999;
         }
     </style>
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item ">
-                    <img class="w-100" src="static/img/caddall1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
-                            <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your<span class="text-primary"> Dream</span> Home With Us</h1>
-<!--                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Get A Quote</a>-->
-                        </div>
+   <div class="container-fluid p-0">
+    <!-- Carousel -->
+       <header>
+        <div class="logo steel-text"></div>
+        <ul class="menu">
+            <a href="{% url 'credential:about' %}" style="margin-top:7px;">About</a>
+             <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="tel:+919847109706" class="dropdown-item">Call Us</a>
+                        <a href="mailto:Caddall2003@gmail.com" class="dropdown-item">Mail US</a>
+                        <a href="https://www.google.com/maps/place/caddall+constructions,Ernakulam,+39%2F5489,Moins+Shopping+Complex+Manorama+Junction,+Panampilly+Nagar,+Kochi,+Kerala+682036/@9.9654437,76.2942781,16z/data=!4m6!3m5!1s0x3b0872b840000001:0xf9abb4d0f368cda1!8m2!3d9.9654437!4d76.2942781!16s%2Fg%2F11gfw10jr4" class="dropdown-item">Location</a>
                     </div>
                 </div>
-                <div class="carousel-item active">
-                    <img class="w-100" src="static/img/caddall2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
-                            <h1 class="display-2 text-uppercase text-white mb-md-4">We Are <span class="text-primary">Trusted</span> For Your Project</h1>
-<!--                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Contact Us</a>-->
-                        </div>
-                    </div>
+            <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                   <div class="dropdown-menu m-0">
+                        <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
+                       <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">On Going Projects</a>
+                     <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Works</a>
+                  </div>
+            </div>
+        </ul>
+
+    </header>
+
+    <!-- slider -->
+
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="/static/img/sliderpic1.jpg">
+                <div class="content">
+
+                    <p>
+                    <h3 class="steel-text" style="font-size: 5rem;font-family: myfont;">CADDALL</h3>
+</h3>
+                    </p>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="item">
+                <img src="/static/img/sliderpic2.jpg">
+                <div class="content">
+                    <p>
+                        <h3 class="steel-text" style="font-size: 5rem;font-family: myfont;">CADDALL</h3>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic3.jpg">
+                <div class="content">
+                    <p>
+                        <h3 class="steel-text" style="font-size: 5rem;font-family: myfont;">CADDALL</h3>
+                    </p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="/static/img/sliderpic4.jpg">
+                <div class="content">
+                    <p>
+                        <h3 class="steel-text"  style="font-size: 5rem;font-family: myfont;">CADDALL</h3>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic5.jpg">
+                <div class="content">
+                    <p>
+                        <h3 class="steel-text"  style="font-size: 5rem;font-family: myfont;">CADDALL</h3>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="/static/img/sliderpic1.jpg">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic2.jpg">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic3.jpg">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic4.jpg">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="/static/img/sliderpic5.jpg">
+                <div class="content">
+
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Carousel End -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.container-fluid{
+    font-family: Poppins;
+    margin: 0;
+    background-color: #010101;
+    color: #eee;
+}
+svg{
+    width: 25px;
+}
+header{
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header .logo{
+    font-weight: 20px;
+    width:130px;
+}
+header .menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+/* css slider */
+.slider{
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.5);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+@font-face{
+font-family:myfont;
+src:url(/static/Market_Deco.ttf)
+}
+@font-face{
+font-family:mifont;
+src:url(/static/Moonrising Italic.ttf)
+}
+.steel-text {
+            color: transparent;
+            background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 
 
-    <!-- About Start -->
+        }
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+}
+        </style>
 
 
+    <script>
+        let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let thumbnails = document.querySelectorAll('.thumbnail .item');
+
+// config param
+let countItem = items.length;
+let itemActive = 0;
+// event next click
+next.onclick = function(){
+    itemActive = itemActive + 1;
+    if(itemActive >= countItem){
+        itemActive = 0;
+    }
+    showSlider();
+}
+//event prev click
+prev.onclick = function(){
+    itemActive = itemActive - 1;
+    if(itemActive < 0){
+        itemActive = countItem - 1;
+    }
+    showSlider();
+}
+// auto run slider
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 5000)
+function showSlider(){
+    // remove item active old
+    let itemActiveOld = document.querySelector('.slider .list .item.active');
+    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+    itemActiveOld.classList.remove('active');
+    thumbnailActiveOld.classList.remove('active');
+
+    // active new item
+    items[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+
+    // clear auto time run slider
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 5000)
+}
+
+// click thumbnail
+thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+        itemActive = index;
+        showSlider();
+    })
+})
+    </script>
+
+</div>
 
 <div class="container">
         <div class="center-box">
-            <h1 class="display-5 text-uppercase text-dark text-center">We are here to build your <span class="text-primary">dream</span></h1>
-            <h4 class="text-uppercase mb-1 text-body text-center">Our expertise ensures your vision becomes reality</h4>
+            <h1 class="display-5 text-uppercase text-dark text-center">We are here to build your <span class="text" style="color:rgb(199,100,72);">dream</span></h1>
+            <h4 class="text-uppercase mb-1 text-body text-center"><span class="text-dark">Our expertise ensures your vision becomes reality</span></h4>
 
             <div class="expertise-row">
-                <div class="expertise-item fw-bold">
-                    <i class="fa fa-check text-primary"></i>ARCHITECTURE DESIGN
+                <div class="expertise-item fw-bold text-dark">
+                    <i class="fa fa-check text"style="color:rgb(213,124,106);"></i>ARCHITECTURE DESIGN
                 </div>
-                <div class="expertise-item fw-bold">
-                    <i class="fa fa-check text-primary"></i>INTERIOR DESIGN
+                <div class="expertise-item fw-bold text-dark">
+                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>INTERIOR DESIGN
                 </div>
-                <div class="expertise-item fw-bold">
-                    <i class="fa fa-check text-primary"></i>CONSTRUCTION
+                <div class="expertise-item fw-bold text-dark">
+                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>CONSTRUCTION
                 </div>
-                <div class="expertise-item fw-bold">
-                    <i class="fa fa-check text-primary"></i>RENOVATION
+                <div class="expertise-item fw-bold text-dark">
+                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>RENOVATION
                 </div>
             </div>
+     <buttonw><a href="{% url 'credential:about' %}"> About Us</a>
+</buttonw>
+
         </div>
+
+
+
+
     </div>
     <style>
+        buttonw {
+
+margin-left:20px;
+margin-top:10px;
+ padding: 15px 15px;
+ border: unset;
+ border-radius: 5px;
+ color: #212121;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 15px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+buttonw::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 5px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+buttonw:hover {
+ color: #e8e8e8;
+}
+
+buttonw:hover::before {
+ width: 100%;
+}
+
+
         .center-box {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+            background: rgb(90,100,117); /* semi-transparent white background */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 5px 5px rgba(0, 0, 155, 0.8);
             padding: 20px;
             margin: 50px auto;
             max-width: 800px;
@@ -233,87 +524,138 @@ font-size: 16px;
             flex: 1 1 45%;
             margin: 10px;
             text-align: center;
+
         }
         .expertise-item i {
             margin-right: 10px;
         }
     </style>
+<style>
+    .service-item {
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+            color: white;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Ensure card content does not overflow */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: transform 0.3s ease;
+        }
 
+        .service-item:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
 
-<div class="container-fluid bg-light py-4 px-3">
+        .img-fluid {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .service-item-px-4 pb-4 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover .service-item-px-4 pb-4 {
+            transform: translateY(0); /* Slide up on hover */
+        }
+
+        .card-text {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-location {
+            font-size: 0.875rem;
+        }
+</style>
+
+<div class="container-fluid py-4 px-3" style="background:transparent;">
     <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-        <h1 class="display-5 text-dark">WE PROVIDE <span class="text-primary">THE BEST</span> CONSTRUCTION SERVICES</h1>
+        <h1 class="display-5 text-light">WE PROVIDE <span class="steel-text">THE BEST</span> CONSTRUCTION SERVICES</h1>
     </div>
     <div class="row g-5">
         <div class="col-lg-6 col-md-6">
-            <div class="service-item bg-white d-flex flex-column align-items-center text-center" style="border-radius: 5px;">
+            <div class="service-item  d-flex flex-column align-items-center text-center" style="border-radius: 5px;background:black;box-shadow: 0 0 0.2px 2px rgb(90,100,117);">
                 <img class="img-fluid fixed-image-height" src="static/img/ongoingcover2.jpg" alt="">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-building text-primary"></i>
+                <div class="service-icon" style="background:black;">
+                    <i class="fa fa-3x fa-building steel-text"></i>
                 </div>
                 <div class="px-4 pb-4">
-                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>ON GOING PROJECTS</h5>
+                    <h5 class="text-white mb-2">ON GOING PROJECTS</h5>
                     <a class="btn text-primary" href="{% url 'cadapp:incomplete' %}">VIEW <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="col-lg-6 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center" style="border-radius: 30px;">
+            <div class="service-item rounded d-flex flex-column align-items-center text-center" style="border-radius: 5px;background:black;box-shadow: 0 0 0.2px 2px rgb(90,100,117);">
                 <img class="img-fluid fixed-image-height" src="static/img/completed1.jpg" alt="">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-home text-primary"></i>
+                <div class="service-icon "style="background:black;">
+                    <i class="fa fa-3x fa-home steel-text"></i>
                 </div>
                 <div class="px-4 pb-4">
-                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>COMPLETED PROJECTS</h5>
+                    <h5 class="text-white mb-2">COMPLETED PROJECTS</h5>
                     <a class="btn text-primary ml-2" href="{% url 'cadapp:complete' %}">VIEW <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
-            <div class="service-item bg-white d-flex flex-column align-items-center text-center" style="border-radius: 5px;">
+            <div class="service-item  d-flex flex-column align-items-center text-center" style="border-radius: 5px;background:black;box-shadow: 0 0 0.2px 2px rgb(90,100,117);">
                 <img class="img-fluid fixed-image-height" src="static/img/interiorcover.jpg" alt="">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-palette text-primary"></i>
+                <div class="service-icon" style="background:black;">
+                    <i class="fa fa-3x fa-palette steel-text" ></i>
                 </div>
                 <div class="px-4 pb-4">
-                    <h5 class="text-dark mb-2"><i class="bi bi-building text-primary me-2"></i>INTERIORS</h5>
+                    <h5 class="text-light mb-2">INTERIORS</h5>
                     <a class="btn text-primary" href="{% url 'credential:viewinterior' %}">VIEW <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 position-relative">
+
     <!-- Bootstrap Carousel -->
-    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel"style="box-shadow: 0 0 15px 5px rgba(255, 160, 0, 0.8);border-radius: 10px;">
-        <div class="carousel-inner">
-            {% for i in main_list %}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximg.url }}'); background-size: cover; background-position: center;">
-                    </div>
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" style="box-shadow: 0 0 15px 5px rgba(255, 160, 0, 0.8); border-radius: 10px;height:500px;">
+    <div class="carousel-inner">
+        {% for i in main_list %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="service-item d-flex flex-column align-items-center text-center" style="height: 500px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximg.url }}'); background-size: cover; background-position: center;">
                 </div>
-                <div class="carousel-item">
-                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgs.url }}'); background-size: cover; background-position: center;">
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <div class="service-item d-flex flex-column align-items-center text-center" style="height: 500px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgs.url }}'); background-size: cover; background-position: center;">
                 </div>
-                <div class="carousel-item">
-                    <div class="service-item d-flex flex-column align-items-center text-center" style="height: 485px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgss.url }}'); background-size: cover; background-position: center;">
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <div class="service-item d-flex flex-column align-items-center text-center" style="height: 500px; border-radius: 5px; overflow: hidden; background-image: url('{{ i.luximgss.url }}'); background-size: cover; background-position: center;">
                 </div>
-            {% endfor %}
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+            </div>
+        {% endfor %}
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
     <!-- Fixed "LEAD PROJECTS" Card -->
-    <div class="service-item d-flex flex-column align-items-center text-center lead-project-card" style="position: absolute; bottom: 1px; width: 40%; background: rgba(0, 0, 0, 0.8); border: 2px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px;">
-        <h5 class="gold-text mb-2"><i class="bi bi-building text-primary me-2"></i>LEAD PROJECTS</h5>
+    <div class="service-item1 d-flex flex-column align-items-center text-center lead-project-card" style="position: absolute; bottom: 1px; width: 40%; background: rgba(0, 0, 0, 0.8); border: 2px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px;">
+        <h5 class="gold-text mb-2">LEAD PROJECTS</h5>
         <!-- Button to trigger modal -->
         <button type="button" class="btn btn-sm Btn-premium" data-toggle="modal" data-target="#leadProjectModal" style="padding:5px;">
             View
@@ -321,8 +663,8 @@ font-size: 16px;
     </div>
 <style>
     .Btn-premium {
-  width: 140px;
-  height: 40px;
+  width: 80px;
+  height: 35px;
   border: none;
   border-radius: 10px;
   background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
@@ -368,59 +710,68 @@ font-size: 16px;
 }
 </style>
     <div class="modal fade" id="leadProjectModal" tabindex="-1" role="dialog" aria-labelledby="leadProjectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content"style="border-radius:10px;">
-                <div class="modal-header">
-                    <h3 class="modal-title gold-text" id="leadProjectModalLabel" style="margin-left:50px;">LEAD PROJECTS</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body"style=" max-height: 60vh;overflow-y: auto;scrollbar-width: none;">
-                    <div class="container">
-                        {% for lead in lead_list %}
-                            <div class="lead-item">
-
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <img src="{{ lead.photo.url }}" alt="Photo" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <img src="{{ lead.photo1.url }}" alt="Photo1" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <img src="{{ lead.photo2.url }}" alt="Photo2" class="img-fluid">
-                                    </div>
-                                    {% if lead.photooptional %}
-                                <div class="col-md-4 mb-3">
-                                    <img src="{{ lead.photooptional.url }}" alt="Photooptional" class="img-fluid">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="border-radius:10px;">
+            <div class="modal-header">
+                <h3 class="modal-title gold-text" id="leadProjectModalLabel" style="margin-left:50px;">LEAD PROJECTS</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none;">
+                <div class="container">
+                    {% for lead in lead_list %}
+                        <div class="lead-item">
+                            <div class="row">
+                                <div class="col-12 mb-3 mt-3">
+                                    <img src="{{ lead.photo.url }}" alt="Photo" class="img-fluid custom-img">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <img src="{{ lead.photo1.url }}" alt="Photo1" class="img-fluid custom-img">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <img src="{{ lead.photo2.url }}" alt="Photo2" class="img-fluid custom-img">
+                                </div>
+                                {% if lead.photooptional %}
+                                <div class="col-12 mb-3">
+                                    <img src="{{ lead.photooptional.url }}" alt="Photooptional" class="img-fluid custom-img">
                                 </div>
                                 {% endif %}
                                 {% if lead.photooptional1 %}
-                                <div class="col-md-4 mb-3">
-                                    <img src="{{ lead.photooptional1.url }}" alt="Photooptional1" class="img-fluid">
+                                <div class="col-12 mb-3">
+                                    <img src="{{ lead.photooptional1.url }}" alt="Photooptional1" class="img-fluid custom-img">
                                 </div>
                                 {% endif %}
                                 {% if lead.photooptional2 %}
-                                <div class="col-md-4 mb-3">
-                                    <img src="{{ lead.photooptional2.url }}" alt="Photooptional2" class="img-fluid">
+                                <div class="col-12 mb-3">
+                                    <img src="{{ lead.photooptional2.url }}" alt="Photooptional2" class="img-fluid custom-img">
                                 </div>
                                 {% endif %}
-                                </div>
-                                <h4 class="steel-text">{{ lead.luxtitle }}</h4>
-                                <p><strong>Location:</strong> {{ lead.luxloc }}</p>
-                                <p>{{ lead.luxdesc }}</p>
-                                <hr>
                             </div>
-                        {% endfor %}
-                    </div>
+                            <h4 class="gold-text">{{ lead.luxtitle }}</h4>
+                            <p class="text-dark"><strong>Location:</strong> {{ lead.luxloc }}</p>
+                            <p class="text-dark">{{ lead.luxdesc }}</p>
+                            <hr>
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
+
+<style>
+    .custom-img {
+
+        object-fit: cover;
+        width: 100%;
+        height:100%;
+    }
+</style>
+
 
 
 
@@ -444,230 +795,189 @@ font-size: 16px;
 </style>
 
     <!-- Appointment Start -->
-    <div class="container-fluid py-6 px-0">
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="card2 mt-5">
-  <div class="tools">
-    <div class="circle">
-      <span class="red box"></span>
-    </div>
-    <div class="circle">
-      <span class="yellow box"></span>
-    </div>
-    <div class="circle">
-      <span class="green box"></span>
-    </div>
-  </div>
-  <div class="card__content">
-      <p class="title text-grey">MESSAGE US</p>
-    <hr>
-    <p class="content-justify text-grey ml-3">Message us on WhatsApp or fill the form for a call back/reply mail.
-    </p>
-    <p class="content-justify text-grey ml-3">
-        We will reach out soon....
-    </p>
 
-  </div>
-  <a href="https://wa.me/919847109706" class="button2">
-    WhatsApp
-    <svg viewBox="0 0 48 48" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z" fill="#fff"></path>
-        <path d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z" fill="#fff"></path>
-        <path d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z" fill="#cfd8dc"></path>
-        <path d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z" fill="#40c351"></path>
-        <path clip-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" fill-rule="evenodd" fill="#fff"></path>
-    </svg>
-</a>
+<style>
 
+        .card {
+            width: 330px;
+            height: 110px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            background:white;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: space-around;
+            gap: 15px;
+            z-index: 1050; /* Above other elements */
+        }
+        #enquiryPopup:target {
+            display: flex;
+        }
+        .wave {
+            position: absolute;
+            transform: rotate(90deg);
+            left: -31px;
+            top: 32px;
+            width: 80px;
+            height:40px;
+            fill: #04e4003a;
+        }
+        .icon-container {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #04e40048;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        .icon {
+            width: 17px;
+            height: 17px;
+            color: #269b24;
+        }
+        .message-text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+        .message-text,
+        .sub-text {
+            margin: 0;
+            cursor: default;
+
+        }
+        .message-text {
+            color: #269b24;
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .sub-text {
+            font-size: 14px;
+            color: #555;
+        }
+        .cross-icon {
+            width: 18px;
+            height: 18px;
+            color: #555;
+            cursor: pointer;
+            margin-bottom:20px;
+            margin-left:40px;
+        }
+    </style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 mt-5" style="background-color: rgba(128, 128, 128, 0.4); border-radius: 30px; margin-bottom:100px;">
+            <div class="bg-primary-subtle text-center p-5" style="border-radius: 30px;">
+                <h5 class="text-white" style="margin-bottom:25px;font-family:myfont;">WRITE US YOUR ENQUIRY</h5>
+                <form action="#enquiryPopup" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" name="name" class="form-control border-0" placeholder="Name" style="background-color: white; height: 55px; border-radius: 20px;" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="email" name="email" class="form-control border-0" placeholder="Email" style="background-color: white; height: 55px; border-radius: 20px;" required>
+                        </div>
+                        <div class="col-12">
+                                <input type="tel" name="phone" class="form-control border-0" placeholder="Phone No (+91)" style="background-color: white; height: 55px; border-radius: 20px;" pattern="[0-9]{10}" required>
+                            </div>
+                        <div class="col-12">
+                            <textarea class="form-control border-0" name="message" rows="5" placeholder="Message" style="background-color: white; border-radius: 20px;"></textarea>
+                        </div>
+                        <div class="col-12 d-flex align-items-center justify-content-between mt-4" style="width:740px;margin-left:20px;">
+                            <button class="btn btn-primary w-100 py-3" type="submit" style="border-radius: 30px;">Submit</button>
+                            <div class="whatsapp-icon ms-3">
+                                <a href="https://wa.me/9847109706" target="_blank" class="social-link4">
+                                    <svg viewBox="0 0 16 16" class="bi bi-whatsapp" fill="currentColor" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="white" d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <style>
-    .button2 {
-  margin-right:50px;
-  display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  color: #090909;
-  padding: 0.7em 3.3em 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
+    /* Additional custom styles for the form and WhatsApp icon */
+.whatsapp-icon {
+    margin-left: 15px;
+    margin-right:30px;
 }
 
-.button2 > svg {
-  height: 30px;
-  position: absolute;
-  padding: 0px 5px;
-  margin-top: -4px;
+.social-link4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background-color: #25D366;
+    border-radius: 50%;
+    transition: background-color 0.25s;
 }
 
-.button2:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5,
-             inset -4px -4px 12px #ffffff;
-}
-
-.button2:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-  top: 100%;
-  width: 140%;
-  height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.button2:after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-  top: 180%;
-  width: 160%;
-  height: 190%;
-  background-color: #009087;
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.button2:hover {
-  color: #ffffff;
-  border: 1px solid #009087;
-}
-
-.button2:hover:before {
-  top: -35%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.button2:hover:after {
-  top: -45%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-    .card2 {
-  width: 290px;
-  height: 314px;
-  margin: 0 auto;
-  background-color: #f4f4f3;
-  border-radius: 8px;
-  z-index: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.card2::after {
-  position: absolute;
-  content: '';
-  background-color: #454a50;
-  width: 50px;
-  height: 100px;
-  z-index: -1;
-  border-radius: 8px;
-}
-
-.tools {
-  display: flex;
-  align-items: center;
-  padding: 9px;
-  border-radius: 8px;
-  background: #454a50;
-  margin-top: -2px;
-}
-
-.circle {
-  padding: 0 4px;
-}
-
-.card2__content {
-  height: 100%;
-  margin: 0px;
-  border-radius: 8px;
-  background: #f4f4f3;
-  padding: 20px;
-}
-
-.title {
-  font-size: 20px;
-  height:40px;
-  margin-left:70px;
-  margin-top:10px;
-}
-
-.content-justify {
-  margin-top: 10px;
-  font-size: 17px;
-}
-
-.box {
-  display: inline-block;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  padding: 1px;
-  border-radius: 50%;
-}
-
-.red {
-  background-color: #ff605c;
-}
-
-.yellow {
-  background-color: #ffbd44;
-}
-
-.green {
-  background-color: #00ca4e;
+.social-link4:hover {
+    background-color: #128C7E;
 }
 
 </style>
 
+<!-- Popup Card -->
+<div class="card" id="enquiryPopup">
+    <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"
+            fill-opacity="1"
+        ></path>
+    </svg>
 
-            </div>
-            <div class="col-lg-8" style="background-color: rgba(128, 128, 128, 0.4);border-radius:30px;width:60rem;">
-                <div class="bg-primary-subtle text-center p-5"style="border-radius: 30px;">
-                    <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
-                                <input type="text bg-light" name="name" class="form-control border-0" placeholder="Your Name" style="background-color: white; height: 55px;border-radius:20px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" name="email" class="form-control border-0" placeholder="Your Email" style="background-color: white; height: 55px;border-radius:20px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="text" name="phone" class="form-control border-0 da" placeholder="Your Phone.No" style="background-color: white; height: 55px;border-radius:20px;">
-
-                            </div>
-
-
-                            <div class="col-12">
-                                <textarea class="form-control border-0" name="message" rows="5" placeholder="Message"style="background-color: white;border-radius:20px;"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" style="border-radius:20px;">Submit Enquiry</button>
-                            </div>
-                        </div>
-                    </>
-                </div>
-            </div>
-        </div>
+    <div class="message-text-container">
+        <p class="message-text ml-2">Enquiry Submitted <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            stroke-width="0"
+            fill="currentColor"
+            stroke="currentColor"
+            class="icon mb-1"
+        >
+            <path
+                d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"
+            ></path>
+        </svg>
+        <a href="#" class="cross-icon">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15 15"
+            stroke-width="0"
+            fill="none"
+            stroke="currentColor"
+            class="cross-icon"
+        >
+            <path
+                fill="currentColor"
+                d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+            ></path>
+        </svg>
+    </a></p>
+        <p class="sub-text text-success ml-2">Thank you for your enquiry. We will get back to you soon</p>
     </div>
+
+</div>
 
 <style>
     .button2 {
@@ -753,29 +1063,24 @@ font-size: 16px;
     
 
     <!-- Footer Start -->
-    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5" style="margin-top:0px;">
         <div class="row g-5">
             <div class="col-lg-6 pe-lg-5">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 display-4 text-uppercase steel-text"><i class="bi bi-building text-primary me-2"></i>CADDALL</h1>
+                    <img src="static/img/caddallnew4.png" alt="Icon" class="icon" style="width:200px;height:200px;margin-bottom:10px;margin-right:10px;">
                 </a>
-                <p><i class="fa fa-map-marker-alt me-2"></i>panambily nagar,kochi</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>Panambily Nagar,Kochi</p>
                 <p><i class="fa fa-phone-alt me-2"></i>+91 9847109706</p>
                 <p><i class="fa fa-envelope me-2"></i>Caddall2003@gmail.com</p>
-<!--                <div class="d-flex justify-content-start mt-4">-->
-<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>-->
-<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>-->
-<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-linkedin-in"></i></a>-->
-<!--                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="#"><i class="fab fa-instagram"></i></a>-->
-<!--                </div>-->
+
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <div class="row g-5">
                     <div class="col-sm-6">
                         <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white-50 mb-2" href="{% url 'credential:index' %}"><i class="fa fa-angle-right me-2"></i>Top</a>
-                            <a class="text-white-50 mb-2" href="{% url 'credential:viewinterior' %}"><i class="fa fa-angle-right me-2"></i>Interior Gallery</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Top</a>
+                            <a class="text-white-50 mb-2" href="{% url 'credential:viewinterior' %}"><i class="fa fa-angle-right me-2"></i>About</a>
                             <a class="text-white-50 mb-2" href="tel:+91 9847109706"><i class="fa fa-angle-right me-2"></i>Call Us</a>
                             <a class="text-white-50" href="mailto:Caddall2003@gmail.com"><i class="fa fa-angle-right me-2"></i>Mail Us</a>
                         </div>
@@ -820,6 +1125,9 @@ font-size: 16px;
 
     <!-- Template Javascript -->
     <script src="/staticjs/main.js"></script>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

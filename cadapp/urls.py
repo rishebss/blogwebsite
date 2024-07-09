@@ -12,6 +12,8 @@ urlpatterns = [
     path('viewincomplete/',views.viewincomplete,name='viewincomplete'),
     path('deleteincomplete/<int:incompleteid>/',views.deleteincomplete,name='deleteincomplete'),
     path('updatecomplete/<int:id>/',views.updatecomplete,name='updatecomplete'),
-    path('updateincomplete/<int:id>/', views.updateincomplete, name='updateincomplete')
+    path('updateincomplete/<int:id>/', views.updateincomplete, name='updateincomplete'),
+    path('demo/',views.demo,name='demo')
+
 
 ]

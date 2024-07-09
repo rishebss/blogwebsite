@@ -7,23 +7,7 @@ from .forms import LuxForm, CadForm, LuxmodelForm
 from .models import Cad, Lux, Luxmodel, Interior
 
 
-# def index(request):
-#     if request.method == "POST":
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         phone = request.POST.get('phone')
-#         message = request.POST.get('message')
-#         cadd = Cad(name=name, email=email, phone=phone, message=message)
-#         cadd.save()
-#
-#     main = Lux.objects.all().order_by('-created_at')
-#     leads = Luxmodel.objects.all().order_by('-created_at')
-#
-#     context = {
-#         'main_list': main,
-#         'lead_list': leads,
-#     }
-#     return render(request, 'index.html', context)
+
 
 
 def index(request):
@@ -117,7 +101,7 @@ def uploadlead(request):
         luxdesc=request.POST.get('luxdesc')
         upload = Luxmodel(photo=photo,photo1=photo1,photo2=photo2,photooptional=photooptional,photooptional1=photooptional1,photooptional2=photooptional2,luxtitle=luxtitle,luxloc=luxloc,luxdesc=luxdesc)
         upload.save()
-        return redirect('/dashboard')
+        return redirect('credential:dashboard')
     return render(request,'uploadlead.html')
 
 def deletelead(request,luxid):
@@ -146,7 +130,7 @@ def uploadinterior(request):
         interior=request.FILES['interior']
         int=Interior(interior=interior)
         int.save()
-        return redirect('/dashboard')
+        return redirect('credential:dashboard')
     return render(request,"uploadinterior.html")
 def deleteinterior(request,interid):
     dsgn=Interior.objects.get(id=interid)
@@ -158,3 +142,7 @@ def editinterior(request):
     internal = Interior.objects.all().order_by('-created_at')
     context = {'interior_list': internal}
     return render(request, 'editinterior.html', context)
+
+
+def about(request):
+    return render(request,"about.html",)

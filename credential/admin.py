@@ -6,10 +6,12 @@ from . models import Luxmodel
 
 
 
+
 # Register your models here.
 admin.site.register(Cad)
 admin.site.register(Lux)
 admin.site.register(Luxmodel)
 admin.site.register(Interior)
+
 
 

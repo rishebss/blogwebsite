@@ -4,7 +4,7 @@ from django.db import models
 class Cad(models.Model):
     name=models.CharField(max_length=250)
     email=models.CharField(max_length=250)
-    phone=models.IntegerField(blank=True,null=True)
+    phone=models.IntegerField(max_length=15)
     message=models.TextField(max_length=500,null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -35,5 +35,6 @@ class Luxmodel(models.Model):
 class Interior(models.Model):
     interior=models.ImageField(upload_to='gallery')
     created_at = models.DateTimeField(auto_now_add=True)
+
 
 

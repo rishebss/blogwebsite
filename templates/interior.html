@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'style1.css' %}">
     <style>
         body {
+            background:black;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -22,10 +23,15 @@
             -webkit-background-clip: text;
             background-clip: text;
             text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
+        @font-face{
+font-family:myfont;
+src:url(/static/Market_Deco.ttf)
+}
 
         .navbar {
+            background:black;
             padding: 0.5rem;
             display: flex;
             justify-content: space-between;
@@ -126,18 +132,75 @@
                 font-size: 0.875rem;
             }
         }
+
+        /* Custom hamburger styles */
+        .hamburger {
+            margin-bottom:7px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1000; /* Ensure it's above navbar contents */
+            display: none; /* Hide by default on larger screens */
+        }
+
+        .hamburger input {
+            display: none;
+        }
+
+        .hamburger svg {
+            /* The size of the SVG defines the overall size */
+            height: 2.3em;
+            /* Define the transition for transforming the SVG */
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line {
+            fill: none;
+            stroke: white;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3;
+            /* Define the transition for transforming the Stroke */
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line-top-bottom {
+            stroke-dasharray: 12 63;
+        }
+
+        .hamburger input:checked + svg {
+            transform: rotate(-45deg);
+        }
+
+        .hamburger input:checked + svg .line-top-bottom {
+            stroke-dasharray: 20 300;
+            stroke-dashoffset: -32.42;
+        }
+
+        @media (max-width: 767.98px) {
+            .hamburger {
+                display: block; /* Show on smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
-<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 mx-0">
+
+<div class="sticky-top shadow-sm px-0">
+    <nav class="navbar navbar-expand-lg  navbar-dark py-3 py-lg-0 mx-0">
         <div class="container-fluid">
-            <a href="" class="navbar-brand">
+            <a href="#" class="navbar-brand">
                 <h1 class="steel-text">INTERIOR GALLERY</h1>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- Custom hamburger menu -->
+            <label class="hamburger">
+                <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+            <!-- End custom hamburger menu -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{% url 'credential:index' %}" class="nav-item nav-link active">Home</a>
@@ -148,7 +211,7 @@
                             <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
                         </div>
                     </div>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="{% url 'credential:about' %}" class="nav-item nav-link">About</a>
                 </div>
             </div>
         </div>
@@ -158,8 +221,8 @@
 <div class="container">
     <div class="row">
         {% for i in interior_list %}
-        <div class="col-12">
-            <div class="card">
+        <div class="col-12" >
+            <div class="card" style="background-color:transparent;">
                 <img src="{{ i.interior.url }}" alt="Interior Image">
             </div>
         </div>
