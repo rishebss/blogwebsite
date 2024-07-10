@@ -20,7 +20,8 @@ urlpatterns = [
    path('uploadinterior/', views.uploadinterior, name='uploadinterior'),
    path('editinterior/', views.editinterior, name='editinterior'),
    path('deleteinterior/<int:interid>/', views.deleteinterior, name='deleteinterior'),
-   path('about/',views.about,name='about')
+   path('about/',views.about,name='about'),
+   path('demo/',views.demo,name='demo')
 
 
               ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

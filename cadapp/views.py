@@ -93,7 +93,3 @@ def updateincomplete(request, id):
         # If form is not valid, render the edit page with form errors
     return render(request, 'edit2.html', {'form': form, 'incomplete': incomplete})
 
-def demo(request):
-    complete = Complete.objects.all().order_by('-created_at')
-    context = {'completed_list': complete}
-    return render(request, 'demo.html', context)

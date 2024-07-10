@@ -457,21 +457,21 @@ thumbnails.forEach((thumbnail, index) => {
 
 <div class="container">
         <div class="center-box">
-            <h1 class="display-5 text-uppercase text-dark text-center">We are here to build your <span class="text" style="color:rgb(199,100,72);">dream</span></h1>
+            <h1 class="display-5 text-uppercase text-dark text-center">We are here to build your <span class="steel-text2" >dream</span></h1>
             <h4 class="text-uppercase mb-1 text-body text-center"><span class="text-dark">Our expertise ensures your vision becomes reality</span></h4>
 
             <div class="expertise-row">
                 <div class="expertise-item fw-bold text-dark">
-                    <i class="fa fa-check text"style="color:rgb(213,124,106);"></i>ARCHITECTURE DESIGN
+                    <i class="fa fa-check text"></i>ARCHITECTURE DESIGN
                 </div>
                 <div class="expertise-item fw-bold text-dark">
-                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>INTERIOR DESIGN
+                    <i class="fa fa-check text"></i>INTERIOR DESIGN
                 </div>
                 <div class="expertise-item fw-bold text-dark">
-                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>CONSTRUCTION
+                    <i class="fa fa-check text"></i>CONSTRUCTION
                 </div>
                 <div class="expertise-item fw-bold text-dark">
-                    <i class="fa fa-check text" style="color:rgb(213,124,106);"></i>RENOVATION
+                    <i class="fa fa-check text"></i>RENOVATION
                 </div>
             </div>
      <buttonw><a href="{% url 'credential:about' %}"> About Us</a>
@@ -493,7 +493,7 @@ margin-top:10px;
  border-radius: 5px;
  color: #212121;
  z-index: 1;
- background: #e8e8e8;
+ background: #bec4;
  position: relative;
  font-weight: 1000;
  font-size: 15px;
@@ -525,6 +525,15 @@ buttonw:hover {
 buttonw:hover::before {
  width: 100%;
 }
+.steel-text2 {
+            color: transparent;
+            background: linear-gradient(to right, #999 30%, #ddd 50%, #666 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+
+        }
 
 
         .center-box {
@@ -532,9 +541,9 @@ buttonw:hover::before {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgb(90,100,117); /* semi-transparent white background */
+            background: linear-gradient(135deg, #ffffff32, #3a4b8a, #ffffff32);
             border-radius: 10px;
-            box-shadow: 0 0 5px 5px rgba(0, 0, 155, 0.8);
+            box-shadow: 0px 1rem 1.5rem -0.9rem #000000e1;
             padding: 20px;
             margin: 50px auto;
             max-width: 800px;
@@ -606,7 +615,7 @@ buttonw:hover::before {
         }
 </style>
 
-<div class="container-fluid py-4 px-3" style="background:transparent;">
+<div class="container-fluid py-4 px-3" style="background:;">
     <div class="text-center mx-auto mb-5" style="max-width: 600px;">
         <h1 class="display-5 text-light">WE PROVIDE <span class="steel-text">THE BEST</span> CONSTRUCTION SERVICES</h1>
     </div>

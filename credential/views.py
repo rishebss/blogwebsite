@@ -146,3 +146,16 @@ def editinterior(request):
 
 def about(request):
     return render(request,"about.html",)
+
+
+def demo(request):
+    if request.method == "POST":
+        form = CadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to a success page or do something else
+            return HttpResponseRedirect('/')
+    else:
+        form = CadForm()
+
+    return render(request, 'demo.html',)
