@@ -211,7 +211,7 @@ src:url(/static/Market_Deco.ttf)
     transition: all 0.4s ease;
     left: 5%;
     right: 5%;
-    bottom: 10%;
+    bottom: 5%;
     padding: 10px 12px;
     border-left: 4px solid #fff;
     color: #ffffff;
@@ -225,7 +225,7 @@ src:url(/static/Market_Deco.ttf)
 	letter-spacing: 3px;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 23px;
-	margin-bottom: 10px;
+	margin-top:15px;
 }
 .single-content .info h2,
 .single-content .info p{
@@ -240,6 +240,49 @@ src:url(/static/Market_Deco.ttf)
 .single-content .info p{
     font-size: 13px;
     line-height: 17px;
+
+}
+.single-content .info2{
+    position: absolute;
+
+    z-index: 3;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-105%);
+    transition: all 0.4s ease;
+    left: 5%;
+    right: 5%;
+    bottom: 4%;
+    padding: 10px 12px;
+    border-left: 4px solid #fff;
+    color: #ffffff;
+}
+.single-content:hover .info2{
+    opacity: 1;
+    transform: translateX(0);
+}
+.single-content .info2 h2 {
+    text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 23px;
+	margin-top:15px;
+
+}
+.single-content .info2 h2,
+.single-content .info2 p{
+    transition: all 0.7s ease;
+    transform: translateX(-100%);
+    overflow: hidden;
+}
+.single-content:hover .info2 h2,
+.single-content:hover .info2 p{
+    transform: translateX(0);
+}
+.single-content .info2 p{
+    font-size: 13px;
+    line-height: 17px;
+    margin-top:10px;
 }
 .container {
   justify-content: flex-start;
@@ -337,6 +380,7 @@ src:url(/static/Market_Deco.ttf)
 <div class="container">
     <div class="row">
         {% for completed in completed_list %}
+        {% if completed.photo or completed.photo1 or completed.photo2 or completed.photooptional or completed.photooptional1 or completed.photooptional2 %}
         <div class="content-area col-md-4 col-sm-6 mb-3 mt-3">
            <div class="single-content">
                 <img src="{{completed.pic.url}}" alt="">
@@ -355,7 +399,7 @@ src:url(/static/Market_Deco.ttf)
                         <h3 class="modal-title steel-text" id="completedProjectModalLabel{{ completed.id }}">{{ completed.title }}</h3>
                     </div>
                     <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none;">
-                        {% if completed.photo or completed.photo1 or completed.photo2 or completed.photooptional or completed.photooptional1 or completed.photooptional2 %}
+
                             {% if completed.photo %}
                             <div class="mb-3">
                                 <img src="{{ completed.photo.url }}" class="img-fluid" alt="Photo">
@@ -386,11 +430,7 @@ src:url(/static/Market_Deco.ttf)
                                 <img src="{{ completed.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
                             </div>
                             {% endif %}
-                        {% else %}
-                        <div class="mb-3">
-                            <p class="text-white text-center" style="font-size:30px;">Photos not available!</p>
-                        </div>
-                        {% endif %}
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -398,10 +438,22 @@ src:url(/static/Market_Deco.ttf)
                 </div>
             </div>
         </div>
-
+        {% else %}
+         <div class="content-area col-md-4 col-sm-6 mb-3 mt-3">
+           <div class="single-content">
+                <img src="{{completed.pic.url}}" alt="">
+                <div class="info2">
+                    <h2>{{completed.title}}</h2>
+                    <p>{{completed.location}}</p>
+                    <p class="text-secondary" style="font-family: 'Bebas Neue', sans-serif;">INFO UNAVAILABLE</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -422,3 +474,4 @@ src:url(/static/Market_Deco.ttf)
 
 </body>
 </html>
+

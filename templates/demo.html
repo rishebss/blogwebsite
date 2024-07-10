@@ -32,59 +32,6 @@ src:url(/static/Market_Deco.ttf)
         }
 
 
-        .card {
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            position: relative;
-            color: white;
-            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-            overflow: hidden; /* Ensure card content does not overflow */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.05); /* Scale up on hover */
-        }
-
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-content {
-
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-content {
-
-            transform: translateY(0); /* Slide up on hover */
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: bold;
-            font-family:myfont;
-            margin-bottom: 5px;
-        }
-
-        .card-location {
-            font-size: 0.875rem;
-        }
-
-
         .modal-content {
             background-color: rgba(0, 0, 0, 0.75); /* 25% black background */
             border: none; /* Remove border */
@@ -107,45 +54,7 @@ src:url(/static/Market_Deco.ttf)
         .modal-footer {
             border-top: none;
         }
-
-
-    </style>
-</head>
-<body>
-
-<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
-    <nav class="navbar navbar-expand-lg  navbar-dark py-3 py-lg-0 mx-0">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
-                <h1 class="steel-text">COMPLETED WORKS</h1>
-            </a>
-            <!-- Custom hamburger menu -->
-            <label class="hamburger">
-                <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <svg viewBox="0 0 32 32">
-                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                    <path class="line" d="M7 16 27 16"></path>
-                </svg>
-            </label>
-            <!-- End custom hamburger menu -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="{% url 'credential:index' %}" class="nav-item nav-link active">Home</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Gallery</a>
-                            <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">Ongoing Projects</a>
-                        </div>
-                    </div>
-                    <a href="{% url 'credential:about' %}" class="nav-item nav-link">About</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-</div>
-<style>
-    .navbar {
+        .navbar {
             background:black;
             padding: 0.5rem;
             display: flex;
@@ -182,6 +91,7 @@ src:url(/static/Market_Deco.ttf)
             .navbar-nav {
                 margin-top: 1rem;
             }
+
         }
 
         @media (min-width: 768px) and (max-width: 991.98px) {
@@ -241,61 +151,301 @@ src:url(/static/Market_Deco.ttf)
                 display: block; /* Show on smaller screens */
             }
         }
+        .content-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px 0;
+
+}
+    .single-content{
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 20px 2px rgba(0,0,0,0.3);
+    border-radius:15px;
+}
+
+.single-content::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.single-content:hover::after {
+	position: absolute;
+    content: '';
+    transform: translateY(0);
+	background: linear-gradient(35deg, rgba(0, 0, 46, 0.8) 25%, rgba(0, 0, 46, 0));
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 1;
+}
+.single-content img{
+    object-fit: cover;
+    min-height: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: auto;
+}
+.single-content:hover img{
+    transform: scale(1.3) translate(10%, 10%);
+}
+.single-content .info{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-105%);
+    transition: all 0.4s ease;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    padding: 10px 12px;
+    border-left: 4px solid #fff;
+    color: #ffffff;
+}
+.single-content:hover .info{
+    opacity: 1;
+    transform: translateX(0);
+}
+.single-content .info h2 {
+    text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 23px;
+	margin-top:15px;
+}
+.single-content .info h2,
+.single-content .info p{
+    transition: all 0.7s ease;
+    transform: translateX(-100%);
+    overflow: hidden;
+}
+.single-content:hover .info h2,
+.single-content:hover .info p{
+    transform: translateX(0);
+}
+.single-content .info p{
+    font-size: 13px;
+    line-height: 17px;
+
+}
+.single-content .info2{
+    position: absolute;
+
+    z-index: 3;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-105%);
+    transition: all 0.4s ease;
+    left: 5%;
+    right: 5%;
+    bottom: 4%;
+    padding: 10px 12px;
+    border-left: 4px solid #fff;
+    color: #ffffff;
+}
+.single-content:hover .info2{
+    opacity: 1;
+    transform: translateX(0);
+}
+.single-content .info2 h2 {
+    text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 23px;
+	margin-top:15px;
+
+}
+.single-content .info2 h2,
+.single-content .info2 p{
+    transition: all 0.7s ease;
+    transform: translateX(-100%);
+    overflow: hidden;
+}
+.single-content:hover .info2 h2,
+.single-content:hover .info2 p{
+    transform: translateX(0);
+}
+.single-content .info2 p{
+    font-size: 13px;
+    line-height: 17px;
+    margin-top:10px;
+}
+.container {
+  justify-content: flex-start;
+  position: relative;
+}
+
+.button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  margin-right:350px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  transition: all .3s ease;
+}
+.button:hover {
+  letter-spacing: 3px;
+}
+
+.button:hover ~.second {
+  opacity: .66;
+  right: -20px;
+  transition-delay: 50ms;
+}
+
+.button:hover ~.third {
+  opacity: .33;
+  right: -40px;
+  transition-delay: 100ms;
+}
+
+.second,
+.third {
+  opacity: 0;
+}
+    @media (max-width: 767.98px) {
+            .container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+           .content-area {
+                padding-left: 30px;
+                padding-right: 30px;
+                width:350px;
+            }
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
+    <nav class="navbar navbar-expand-lg  navbar-dark py-3 py-lg-0 mx-0">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <h1 class="steel-text">COMPLETED WORKS</h1>
+            </a>
+            <!-- Custom hamburger menu -->
+            <label class="hamburger">
+                <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+            <!-- End custom hamburger menu -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'credential:index' %}" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Gallery</a>
+                            <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">Ongoing Projects</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'credential:about' %}" class="nav-item nav-link">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<style>
+
 </style>
-<div class="container-fluid">
+<style>
+
+</style>
+<div class="container">
     <div class="row">
         {% for completed in completed_list %}
-        <div class="col-md-4 col-sm-6 mb-3 mt-3">
-            <div class="card" style="background-image: url('{{ completed.pic.url }}');">
-                <div class="card-content" data-toggle="modal" data-target="#completedProjectModal{{ completed.id }}">
-                    <div class="card-title">{{ completed.title }}</div>
-                    <div class="card-location">{{ completed.location }}</div>
+        {% if completed.photo or completed.photo1 or completed.photo2 or completed.photooptional or completed.photooptional1 or completed.photooptional2 %}
+        <div class="content-area col-md-4 col-sm-6 mb-3 mt-3">
+           <div class="single-content">
+                <img src="{{completed.pic.url}}" alt="">
+                <div class="info">
+                    <h2>{{completed.title}}</h2>
+                    <p>{{completed.location}}</p>
+                    <button class="button" data-toggle="modal" data-target="#completedProjectModal{{ completed.id }}">VIEW</button>
                 </div>
             </div>
         </div>
 
-        {% if completed.photo %}
         <div class="modal fade" id="completedProjectModal{{ completed.id }}" tabindex="-1" role="dialog" aria-labelledby="completedProjectModalLabel{{ completed.id }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content" style="border-radius: 10px;">
                     <div class="modal-header" style="height:70px;">
                         <h3 class="modal-title steel-text" id="completedProjectModalLabel{{ completed.id }}">{{ completed.title }}</h3>
                     </div>
-                    <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto;scrollbar-width: none;">
-                        {% if completed.photo %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photo.url }}" class="img-fluid" alt="Photo">
-                        </div>
-                        {% endif %}
-                        {% if completed.photo1 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photo1.url }}" class="img-fluid" alt="Photo1">
-                        </div>
-                        {% endif %}
-                        {% if completed.photo2 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photo2.url }}" class="img-fluid" alt="Photo2">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional.url }}" class="img-fluid" alt="Photooptional">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional1 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional1.url }}" class="img-fluid" alt="Photooptional1">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional2 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
-                        </div>
-                        {% endif %}
+                    <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none;">
+
+                            {% if completed.photo %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo.url }}" class="img-fluid" alt="Photo">
+                            </div>
+                            {% endif %}
+                            {% if completed.photo1 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo1.url }}" class="img-fluid" alt="Photo1">
+                            </div>
+                            {% endif %}
+                            {% if completed.photo2 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo2.url }}" class="img-fluid" alt="Photo2">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional.url }}" class="img-fluid" alt="Photooptional">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional1 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional1.url }}" class="img-fluid" alt="Photooptional1">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional2 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
+                            </div>
+                            {% endif %}
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+         <div class="content-area col-md-4 col-sm-6 mb-3 mt-3">
+           <div class="single-content">
+                <img src="{{completed.pic.url}}" alt="">
+                <div class="info2">
+                    <h2>{{completed.title}}</h2>
+                    <p>{{completed.location}}</p>
+                    <p class="text-secondary" style="font-family: 'Bebas Neue', sans-serif;">info unavailable</p>
                 </div>
             </div>
         </div>
@@ -303,6 +453,8 @@ src:url(/static/Market_Deco.ttf)
         {% endfor %}
     </div>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -322,3 +474,4 @@ src:url(/static/Market_Deco.ttf)
 
 </body>
 </html>
+
