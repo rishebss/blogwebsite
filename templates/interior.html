@@ -51,6 +51,31 @@ src:url(/static/Market_Deco.ttf)
         .navbar-brand {
             margin-left: 0;
         }
+        .fade-in-dropdown {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-in effect on show */
+.dropdown-menu.show.fade-in-dropdown {
+    opacity: 1;
+}
+
+/* Transparent background */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.50); /* 25% transparent black background */
+    border: none; /* Remove border if any */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+
+/* Additional styling for dropdown items */
+.dropdown-item {
+    color: #fff; /* Text color */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background on hover */
+}
 
         .card {
             border-radius: 10px;
@@ -206,7 +231,7 @@ src:url(/static/Market_Deco.ttf)
                     <a href="{% url 'credential:index' %}" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                        <div class="dropdown-menu m-0">
+                        <div class="dropdown-menu m-0 fade-in-dropdown">
                             <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">On Going Projects</a>
                             <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
                         </div>

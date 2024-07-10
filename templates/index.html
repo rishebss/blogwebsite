@@ -91,7 +91,7 @@ font-size: 16px;
             <a href="{% url 'credential:about' %}" style="margin-top:7px;">About</a>
              <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
-                    <div class="dropdown-menu m-0">
+                    <div class="dropdown-menu m-0 fade-in-dropdwon">
                         <a href="tel:+919847109706" class="dropdown-item">Call Us</a>
                         <a href="mailto:Caddall2003@gmail.com" class="dropdown-item">Mail US</a>
                         <a href="https://www.google.com/maps/place/caddall+constructions,Ernakulam,+39%2F5489,Moins+Shopping+Complex+Manorama+Junction,+Panampilly+Nagar,+Kochi,+Kerala+682036/@9.9654437,76.2942781,16z/data=!4m6!3m5!1s0x3b0872b840000001:0xf9abb4d0f368cda1!8m2!3d9.9654437!4d76.2942781!16s%2Fg%2F11gfw10jr4" class="dropdown-item">Location</a>
@@ -99,7 +99,7 @@ font-size: 16px;
                 </div>
             <div class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                   <div class="dropdown-menu m-0">
+                   <div class="dropdown-menu m-0 fade-in-dropdown">
                         <a href="{% url 'cadapp:complete' %}" class="dropdown-item">Completed Projects</a>
                        <a href="{% url 'cadapp:incomplete' %}" class="dropdown-item">On Going Projects</a>
                      <a href="{% url 'credential:viewinterior' %}" class="dropdown-item">Interior Works</a>
@@ -303,6 +303,31 @@ header .menu{
 }
 .slider .list .item.active p:nth-child(3){
     animation-duration: 1.3s;
+}
+.fade-in-dropdown {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-in effect on show */
+.dropdown-menu.show.fade-in-dropdown {
+    opacity: 1;
+}
+
+/* Transparent background */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.50); /* 25% transparent black background */
+    border: none; /* Remove border if any */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+
+/* Additional styling for dropdown items */
+.dropdown-item {
+    color: #fff; /* Text color */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background on hover */
 }
 
 .thumbnail{
