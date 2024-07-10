@@ -352,7 +352,7 @@ src:url(/static/Market_Deco.ttf)
             </div>
         </div>
 
-        {% if ongoing.photo %}
+
         <div class="modal fade" id="ongoingProjectModal{{ ongoing.id }}" tabindex="-1" role="dialog" aria-labelledby="ongoingProjectModalLabel{{ ongoing.id }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content" style="border-radius: 10px;">
@@ -360,6 +360,7 @@ src:url(/static/Market_Deco.ttf)
                         <h3 class="modal-title steel-text" id="completedProjectModalLabel{{ ongoing.id }}">{{ ongoing.heading }}</h3>
                     </div>
                     <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto;scrollbar-width: none;">
+                         {% if ongoing.photo or completed.photo1 or ongoing.photo2 or ongoing.photooptional or ongoing.photooptional1 or ongoing.photooptional2 %}
                         {% if ongoing.photo %}
                         <div class="mb-3">
                             <img src="{{ ongoing.photo.url }}" class="img-fluid" alt="Photo">
@@ -390,14 +391,20 @@ src:url(/static/Market_Deco.ttf)
                             <img src="{{ ongoing.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
                         </div>
                         {% endif %}
+                        {% else %}
+                        <div class="mb-3">
+                            <p class="text-white text-center" style="font-size:20px;">Photos not available!</p>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        {% endif %}
+
+
         {% endfor %}
     </div>
 </div>

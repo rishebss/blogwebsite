@@ -335,7 +335,7 @@ src:url(/static/Market_Deco.ttf)
 
 </style>
 <div class="container">
-    <div class="row ">
+    <div class="row">
         {% for completed in completed_list %}
         <div class="content-area col-md-4 col-sm-6 mb-3 mt-3">
            <div class="single-content">
@@ -343,64 +343,66 @@ src:url(/static/Market_Deco.ttf)
                 <div class="info">
                     <h2>{{completed.title}}</h2>
                     <p>{{completed.location}}</p>
-
-  <button class="button" data-toggle="modal" data-target="#completedProjectModal{{ completed.id }}">VIEW</button>
-
-
-
+                    <button class="button" data-toggle="modal" data-target="#completedProjectModal{{ completed.id }}">VIEW</button>
                 </div>
             </div>
         </div>
 
-        {% if completed.photo %}
         <div class="modal fade" id="completedProjectModal{{ completed.id }}" tabindex="-1" role="dialog" aria-labelledby="completedProjectModalLabel{{ completed.id }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content" style="border-radius: 10px;">
                     <div class="modal-header" style="height:70px;">
                         <h3 class="modal-title steel-text" id="completedProjectModalLabel{{ completed.id }}">{{ completed.title }}</h3>
                     </div>
-                    <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto;scrollbar-width: none;">
-                        {% if completed.photo %}
+                    <div class="modal-body modal-scrollable" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none;">
+                        {% if completed.photo or completed.photo1 or completed.photo2 or completed.photooptional or completed.photooptional1 or completed.photooptional2 %}
+                            {% if completed.photo %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo.url }}" class="img-fluid" alt="Photo">
+                            </div>
+                            {% endif %}
+                            {% if completed.photo1 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo1.url }}" class="img-fluid" alt="Photo1">
+                            </div>
+                            {% endif %}
+                            {% if completed.photo2 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photo2.url }}" class="img-fluid" alt="Photo2">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional.url }}" class="img-fluid" alt="Photooptional">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional1 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional1.url }}" class="img-fluid" alt="Photooptional1">
+                            </div>
+                            {% endif %}
+                            {% if completed.photooptional2 %}
+                            <div class="mb-3">
+                                <img src="{{ completed.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
+                            </div>
+                            {% endif %}
+                        {% else %}
                         <div class="mb-3">
-                            <img src="{{ completed.photo.url }}" class="img-fluid" alt="Photo">
-                        </div>
-                        {% endif %}
-                        {% if completed.photo1 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photo1.url }}" class="img-fluid" alt="Photo1">
-                        </div>
-                        {% endif %}
-                        {% if completed.photo2 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photo2.url }}" class="img-fluid" alt="Photo2">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional.url }}" class="img-fluid" alt="Photooptional">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional1 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional1.url }}" class="img-fluid" alt="Photooptional1">
-                        </div>
-                        {% endif %}
-                        {% if completed.photooptional2 %}
-                        <div class="mb-3">
-                            <img src="{{ completed.photooptional2.url }}" class="img-fluid" alt="Photooptional2">
+                            <p class="text-white text-center" style="font-size:30px;">Photos not available!</p>
                         </div>
                         {% endif %}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        {% endif %}
+
         {% endfor %}
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
