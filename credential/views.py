@@ -42,10 +42,8 @@ def account(request):
         password = request.POST.get('password', '')
 
         if name == 'caddalladmin' and password == 'caddall@2024':
-            # If username and password match, redirect the user to the index page
-            return redirect('credential:dashboard')  # Assuming 'index' is the name of your homepage URL pattern
+            return redirect('credential:dashboard')
         else:
-            # If username or password is incorrect, display an error message
             messages.error(request, 'Invalid username or password')
 
     return render(request, "cred.html")

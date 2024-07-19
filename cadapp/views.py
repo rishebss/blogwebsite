@@ -14,36 +14,70 @@ def complete(request):
     }
     return render(request, 'grid.html', context)
 
+
 def addcomplete(request):
-    if request.method=="POST":
+    if request.method == "POST":
         pic = request.FILES['pic']
-        title = request.POST.get('title',)
+        title = request.POST.get('title')
         location = request.POST.get('location')
-        photo=request.FILES.get('photo')
-        photo1 = request.FILES.get('photo1')
-        photo2 = request.FILES.get('photo2')
-        photooptional = request.FILES.get('photooptional',)
-        photooptional1 = request.FILES.get('photooptional1')
-        photooptional2 = request.FILES.get('photooptional2')
-        completeproject = Complete(pic=pic,title=title,location=location,photo=photo,photo1=photo1,photo2=photo2,photooptional=photooptional,photooptional1=photooptional1,photooptional2=photooptional2)
+
+        photos = request.FILES.getlist('photos')
+        if len(photos) > 6:
+            return render(request, 'addcomplete.html', {'error': 'You can upload up to 6 images only.'})
+
+        photo = photos[0] if len(photos) > 0 else None
+        photo1 = photos[1] if len(photos) > 1 else None
+        photo2 = photos[2] if len(photos) > 2 else None
+        photooptional = photos[3] if len(photos) > 3 else None
+        photooptional1 = photos[4] if len(photos) > 4 else None
+        photooptional2 = photos[5] if len(photos) > 5 else None
+
+        completeproject = Complete(
+            pic=pic,
+            title=title,
+            location=location,
+            photo=photo,
+            photo1=photo1,
+            photo2=photo2,
+            photooptional=photooptional,
+            photooptional1=photooptional1,
+            photooptional2=photooptional2
+        )
         completeproject.save()
         return redirect('credential:dashboard')
-    return render(request,'addcomplete.html')
+    return render(request, 'addcomplete.html')
+
 def addincomplete(request):
-    if request.method=="POST":
+    if request.method == "POST":
         picture = request.FILES['picture']
-        heading = request.POST.get('heading',)
+        heading = request.POST.get('heading')
         place = request.POST.get('place')
-        photo = request.FILES.get('photo')
-        photo1 = request.FILES.get('photo1')
-        photo2 = request.FILES.get('photo2')
-        photooptional = request.FILES.get('photooptional', )
-        photooptional1 = request.FILES.get('photooptional1')
-        photooptional2 = request.FILES.get('photooptional2')
-        incompleteproject = Incomplete(picture=picture,heading=heading,place=place,photo=photo,photo1=photo1,photo2=photo2,photooptional=photooptional,photooptional1=photooptional1,photooptional2=photooptional2)
+
+        photos = request.FILES.getlist('photos')
+        if len(photos) > 6:
+            return render(request, 'addincomplete.html', {'error': 'You can upload up to 6 images only.'})
+
+        photo = photos[0] if len(photos) > 0 else None
+        photo1 = photos[1] if len(photos) > 1 else None
+        photo2 = photos[2] if len(photos) > 2 else None
+        photooptional = photos[3] if len(photos) > 3 else None
+        photooptional1 = photos[4] if len(photos) > 4 else None
+        photooptional2 = photos[5] if len(photos) > 5 else None
+
+        incompleteproject = Incomplete(
+            picture=picture,
+            heading=heading,
+            place=place,
+            photo=photo,
+            photo1=photo1,
+            photo2=photo2,
+            photooptional=photooptional,
+            photooptional1=photooptional1,
+            photooptional2=photooptional2
+        )
         incompleteproject.save()
         return redirect('credential:dashboard')
-    return render(request,'addincomplete.html')
+    return render(request, 'addincomplete.html')
 def incomplete(request):
     ongoing=Incomplete.objects.all().order_by('-created_at')
     context={'ongoing_list':ongoing}

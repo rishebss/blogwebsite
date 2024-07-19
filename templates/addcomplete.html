@@ -74,21 +74,14 @@
                         </div>
                         <p class="text-white">UPLOAD THE PICTURES HERE</p>
                         <div class="mb-3">
+                            <input type="file" name="photos" class="form-control-file" multiple>
+                        </div>
+                        <div id="additional-photos" style="display: none;">
                             <input type="file" name="photo" class="form-control-file">
-                        </div>
-                        <div class="mb-3">
                             <input type="file" name="photo1" class="form-control-file">
-                        </div>
-                        <div class="mb-3">
-                            <input type="file" name="photo2" class="form-control-file" >
-                        </div>
-                        <div class="mb-3">
+                            <input type="file" name="photo2" class="form-control-file">
                             <input type="file" name="photooptional" class="form-control-file">
-                        </div>
-                        <div class="mb-3">
                             <input type="file" name="photooptional1" class="form-control-file">
-                        </div>
-                        <div class="mb-3">
                             <input type="file" name="photooptional2" class="form-control-file">
                         </div>
                         <div class="mb-3">
@@ -100,6 +93,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const photosInput = document.getElementById('photos');
+        const additionalPhotosDiv = document.getElementById('additional-photos');
+        const files = photosInput.files;
+
+        if (files.length > 6) {
+            alert("You can only upload up to 6 images.");
+            e.preventDefault();
+            return;
+        }
+
+        for (let i = 0; i < files.length; i++) {
+            additionalPhotosDiv.children[i].files = photosInput.files[i];
+        }
+    });
+</script>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
