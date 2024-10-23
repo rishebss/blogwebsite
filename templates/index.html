@@ -361,10 +361,10 @@
   <div class="text-center">
     <button class="btn" id="viewMoreButton" style="color:white;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;"><a href="{% url 'credential:viewinterior' %}" style="text-decoration: none;color:white;">INTERIOR GALLERY</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
   </div>
-<!-- Enquiry Form -->
+  <!-- Enquiry Form -->
 <div class="container my-5" style="padding:30px;">
     <h2 class="text-center mb-4">Enquiry Form</h2>
-    <form id="enquiryForm" action="{% url 'credential:index' %}" method="POST" enctype="multipart/form-data">
+    <form id="enquiryForm" action="#enquiryPopup" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Name" name="name" required>
@@ -382,7 +382,6 @@
     </form>
 </div>
 
-
 <!-- Toast Notification -->
 <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11;">
     <div id="enquiryToast" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" style="border-radius: 10px;">
@@ -398,41 +397,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    document.getElementById('enquiryForm').addEventListener('submit', function (event) {
-        event.preventDefault();  // Prevent form from submitting normally
-        
-        let form = document.getElementById('enquiryForm');
-        let formData = new FormData(form);  // Get form data
+    document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent actual form submission for demonstration
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': '{{ csrf_token }}',  // Include the CSRF token
-            }
-        })
-        .then(response => response.json())  // Expecting a JSON response
-        .then(data => {
-            if (data.success) {
-                // Show a success toast or message
-                const toastElement = document.getElementById('enquiryToast');
-                
-                // Create a new toast instance with a 2-second delay
-                const toast = new bootstrap.Toast(toastElement, { delay: 2000 });
-                toast.show();
+        // Get the toast element
+        var toastElement = document.getElementById('enquiryToast');
 
-                // Clear out the form fields after submission
-                form.reset();
-            } else {
-                // Handle form validation errors or other errors
-                alert('Form submission failed');
-            }
-        })
-        .catch(error => console.log('Error:', error));
+        // Configure the toast to last longer (e.g., 10 seconds)
+        var toast = new bootstrap.Toast(toastElement, {
+            delay: 10000  // Duration in milliseconds (10 seconds)
+        });
+
+        // Show the toast
+        toast.show();
+
+        // Simulate form submission (for demonstration). You can remove this line and submit the form normally.
+        setTimeout(function() {
+            document.getElementById('enquiryForm').submit();
+        }, 2000);  // Delay form submission to show toast
     });
 </script>
-
-
   <style>
     .floating-bar {
     position: fixed;
