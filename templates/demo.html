@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caddall Constructions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <style>
+    @font-face {
+      font-family: myfont;
+      src: url('/static/Roboto-Condensed.ttf');
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: myfont;
+    }
+
+    .navbar {
+        backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: saturate(180%);
+    background-color:transparent;
+    
+    }
+
+    .header-section {
+      position: relative;
+      background: url('/static/img/cad12.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+    }
+
+    .header-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(18, 18, 18, 0.8) 80%, #121212 100%);
+  pointer-events: none;
+}
+
+    /* Responsiveness */
+    @media (max-width: 1024px) {
+      .header-section {
+        height: 70vh;
+      }
+
+      .header-section h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-section {
+        height: 60vh;
+      }
+
+      .header-section h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header-section {
+        height: 30vh;
+      }
+
+      .header-section h1 {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .header-section {
+        height: 40vh;
+      }
+
+      .header-section h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .project-card, .lead-projects-card {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: transparent;
+      border: none;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+
+    .swiper-container {
+      height: auto;
+      
+    }
+
+    .swiper-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      
+    }
+
+    .whatsapp-icon {
+      font-size: 20px;
+      color: #25D366;
+      margin-left: 10px;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background-color: transparent;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+      display: none;
+    }
+
+    .hamburger input {
+      display: none;
+    }
+
+    .hamburger svg {
+      height: 2.3em;
+      transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line {
+      fill: none;
+      stroke: white;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 3;
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+      stroke-dasharray: 12 63;
+    }
+
+    .hamburger input:checked + svg {
+      transform: rotate(-45deg);
+    }
+
+    .hamburger input:checked + svg .line-top-bottom {
+      stroke-dasharray: 20 300;
+      stroke-dashoffset: -32.42;
+    }
+
+    @media (max-width: 767.98px) {
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .image-overlay {
+      position: relative;
+      width: 100%;
+    }
+
+    .image-overlay img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 10px;
+      width: 60%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      margin-left: 19%;
+      padding: 10px;
+      border-radius: 15px;
+    }
+
+    .overlay-text h5 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">CADDALL CONSTRUCTIONS</a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <label class="hamburger">
+        <input type="checkbox"  data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <svg viewBox="0 0 32 32">
+          <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              Gallery
+            </a>
+            <ul class="dropdown-menu" style="z-index: 1000;">
+              <li><a class="dropdown-item" href="#">Completed Projects</a></li>
+              <li><a class="dropdown-item" href="#">Ongoing Projects</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="header-section">
+    <h1></h1>
+  </section>
+
+  <!-- Expertise Container -->
+  <div class="container my-5 text-center" >
+    <h2 style="margin-bottom: 30px;">WE ARE HERE TO BUILD YOUR DREAM</h2>
+    <p>OUR EXPERTISE ENSURES YOUR VISION BECOMES REALITY</p>
+    <p> <i class="fa-regular fa-circle-dot" style="margin-right: 10px;"></i>ARCHITECTURE   <i class="fa-regular fa-circle-dot" style="margin-right: 10px;margin-left: 10px;"></i> RENOVATION  </p>  <p><i class="fa-regular fa-circle-dot" style="margin-right: 10px;"></i>INTERIOR DESIGN    <i class="fa-regular fa-circle-dot" style="margin-right: 10px;margin-left: 10px;"></i>CONSTRUCTION </p>
+    <div class="text-center">
+        <button class="btn" id="viewMoreButton" style="color:white;margin-bottom:20px;margin-top:20px;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;"><a href="{% url 'credential:about' %}" style="text-decoration: none;color:white;">ABOUT US</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
+      </div>
+  </div>
+  <style>
+    .image-overlay {
+  position: relative;
+  width: 100%;
+  height: auto;
+  
+}
+
+.image-overlay img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10px; /* Adjust this to change the position */
+  
+  width: 60%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  margin-left:19%;
+  padding: 10px 10px;
+  border-radius: 15px;
+  
+}
+
+.overlay-text h5 {
+  margin: 0;
+  font-size: 1.25rem; /* Adjust font size */
+}
+
+  </style>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{% url 'cadapp:complete' %}">
+        <div class="card project-card" style="border-radius: 15px;">
+          <div class="image-overlay">
+            <img src="/static/img/completed1.jpg" class="card-img-top" alt="Completed Project">
+            <div class="overlay-text">
+              <h5>COMPLETED PROJECTS</h5>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="{% url 'cadapp:incomplete' %}">
+        <div class="card project-card">
+          <div class="image-overlay">
+            <img src="/static/img/caddall2.jpg" class="card-img-top" alt="Ongoing Project">
+            <div class="overlay-text">
+              <h5>ONGOING PROJECTS</h5>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+   <!-- Lead Projects Carousel Card -->
+   <h2 class="text-center" style="margin-top: 60px;">LEAD PROJECTS</h2>
+   <div class="container my-5">
+    <div class="card lead-projects-card" style="padding: 20px;">
+      <div id="leadProjectsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="border-radius: 15px;margin-top: -40px;box-shadow: 0 0 15px 5px rgba(1, 93, 230, 0.8);">
+          <div class="carousel-item active">
+            <img src="/static/img/sliderpic3.jpg" class="d-block w-100" alt="Lead Project 1">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/cars2.jpg" class="d-block w-100" alt="Lead Project 2">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/cars3.jpg" class="d-block w-100" alt="Lead Project 3">
+          </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#leadProjectsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#leadProjectsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+        
+      </div>
+      
+    </div>
+  </div>
+  <!-- <div class="text-center">
+    <button class="btn" id="viewMoreButton" style="color:white;margin-top: -40px;margin-bottom:60px;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;">VIEW PROJECTS</button>
+  </div> -->
+  
+<h2 class="text-center">INTERIOR WORKS</h2>
+  <!-- Interior Work Swiper Cards -->
+  <div class="container my-5">
+    <div class="row swiper-container">
+      <div class="col-md-3 col-6 mb-4">
+        <img src="/static/img/sl3.jpg" class="img-fluid" alt="Interior 1" style="margin-top: 20px;">
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <img src="/static/img/sl1.jpg" class="img-fluid" alt="Interior 2" style="margin-top: 20px;">
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <img src="/static/img/sl4.jpg" class="img-fluid" alt="Interior 3" style="margin-top: 20px;">
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <img src="/static/img/sl2.jpg" class="img-fluid" alt="Interior 4" style="margin-top: 20px;">
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn" id="viewMoreButton" style="color:white;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;">INTERIOR GALLERY<i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
+  </div>
+  <!-- Enquiry Form -->
+  <div class="container my-5" style="padding:30px;">
+    <h2 class="text-center mb-4">Enquiry Form</h2>
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="mb-3">
+        <input type="tel" class="form-control" placeholder="Phone No." required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" rows="3" placeholder="Enquiry"></textarea>
+      </div>
+      <button type="submit" class="btn" style="width:100%;color:white;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;">SUBMIT</button>
+      
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3">
+    <div class="container text-center" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h5 class="steel-text">Caddal Constructions</h5>
+                <p>Building the future, restoring the past.</p>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h5 class="text-white">Quick Links</h5>
+                <ul class="list-unstyled" >
+                    <li><a href="{% url 'credential:index' %}" style="text-decoration: none;color:#ffffff">Home</a></li>
+                    <li><a href="{% url 'cadapp:incomplete' %}" style="text-decoration: none;color:#ffffff">On Going Projects</a></li>
+                    <li><a href="{% url 'cadapp:complete' %}" style="text-decoration: none;color:#ffffff">Completed Projects</a></li>
+                    <li><a href="{% url 'credential:about' %}" style="text-decoration: none;color:#ffffff">About</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-white">Contact Us</h5>
+                <p class="text-white">
+                    Email: info@caddalconstructions.com <br>
+                    Phone: +123 456 7890
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-white mt-4">
+            &copy; 2024 Caddal Constructions. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/lib/easing/easing.min.js"></script>
+<script src="/static/lib/waypoints/waypoints.min.js"></script>
+<script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment.min.js"></script>
+<script src="/static/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+<!-- Template Javascript -->
+<script src="/static/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

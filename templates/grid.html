@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style1.css' %}">
     <style>
         body {
-            background:black;
+            background:#1c1c1c;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -17,7 +17,7 @@
         }
         @font-face{
 font-family:myfont;
-src:url(/static/Market_Deco.ttf)
+src:url(/static/Roboto-Condensed.ttf)
 }
 
 
@@ -55,7 +55,9 @@ src:url(/static/Market_Deco.ttf)
             border-top: none;
         }
         .navbar {
-            background:black;
+            background:transparent;
+            backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
             padding: 0.5rem;
             display: flex;
             justify-content: space-between;
@@ -190,7 +192,7 @@ src:url(/static/Market_Deco.ttf)
     height: 300px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 2px 20px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     border-radius:15px;
 }
 
@@ -208,7 +210,7 @@ src:url(/static/Market_Deco.ttf)
 	position: absolute;
     content: '';
     transform: translateY(0);
-	background: linear-gradient(35deg, rgba(0, 0, 46, 0.8) 25%, rgba(0, 0, 46, 0));
+	background: linear-gradient(35deg, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0));
 	z-index: 2;
 	width: 100%;
 	height: 100%;
@@ -365,7 +367,7 @@ src:url(/static/Market_Deco.ttf)
 </head>
 <body>
 
-<div class="sticky-top bg-dark bg-light-radial shadow-sm px-0">
+<div class="sticky-top px-0">
     <nav class="navbar navbar-expand-lg  navbar-dark py-3 py-lg-0 mx-0">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">
@@ -402,7 +404,7 @@ src:url(/static/Market_Deco.ttf)
 <style>
 
 </style>
-<div class="container">
+<div class="container" style="margin-bottom: 150px;">
     <div class="row">
         {% for completed in completed_list %}
         {% if completed.photo or completed.photo1 or completed.photo2 or completed.photooptional or completed.photooptional1 or completed.photooptional2 %}
@@ -478,29 +480,95 @@ src:url(/static/Market_Deco.ttf)
         {% endfor %}
     </div>
 </div>
-<div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5 text-center" style="margin-top:200px;">
+<!-- Add this footer just before the closing </body> tag -->
+<footer class="footer mt-auto py-3">
+    <div class="container text-center">
         <div class="row">
-
-                <a href="index.html" class="navbar-brand" style="margin-top:60px;">
-                    <img src="/static/img/caddallnew4.png" alt="Icon" class="icon" style="width:200px;height:200px;margin-bottom:10px;margin-right:10px;">
-                </a>
-                <p><i class="fa fa-map-marker-alt me-2"></i>Panambily Nagar,Kochi</p>
-                <p><i class="fa fa-phone-alt me-2"></i>+91 9847109706</p>
-                <p><i class="fa fa-envelope me-2"></i>Caddall2003@gmail.com</p>
-
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h5 class="steel-text">Caddal Constructions</h5>
+                <p>Building the future, restoring the past.</p>
             </div>
-
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h5 class="text-white">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'credential:index' %}">Home</a></li>
+                    <li><a href="{% url 'cadapp:incomplete' %}">On Going Projects</a></li>
+                    <li><a href="{% url 'cadapp:complete' %}">Completed Projects</a></li>
+                    <li><a href="{% url 'credential:about' %}">About</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-white">Contact Us</h5>
+                <p class="text-white">
+                    Email: info@caddalconstructions.com <br>
+                    Phone: +123 456 7890
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-white mt-4">
+            &copy; 2024 Caddal Constructions. All rights reserved.
         </div>
     </div>
-    <div class="container-fluid bg-dark bg-light-radial text-white px-0" style="margin-top:20px;">
-        <div class="d-flex flex-column flex-md-row justify-content-center">
-            <div class="py-4 px-5 text-center text-md-start">
-                <p class="mb-0 ">&copy; <a class="text-primary" href="#"> caddall</a>. All Rights Reserved.</p>
-            </div>
+</footer>
 
-        </div>
-    </div>
+<style>
+.footer {
+    background:transparent;
+            backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: 'myfont';
+    text-align: center;
+    
+}
 
+.footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer p, .footer a {
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+.footer .social-icons a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    
+    color: #ffffff;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer ul li a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+</style>
+
+<!-- Font Awesome for Social Media Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
