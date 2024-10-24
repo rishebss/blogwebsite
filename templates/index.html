@@ -24,8 +24,8 @@
 
     .navbar {
       background: transparent;
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(5px) saturate(100%);
+    -webkit-backdrop-filter: blur(7px) saturate(100%);
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -38,9 +38,9 @@
 
     .header-section {
       position: relative;
-      background: url('/static/img/cad12.png') no-repeat center center;
+      background: url('/static/img/cad14.png') no-repeat center center;
       background-size: cover;
-      height: 100vh;
+      height: 60vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -72,7 +72,7 @@
 
     @media (max-width: 768px) {
       .header-section {
-        height: 60vh;
+        height: 50vh;
       }
 
       .header-section h1 {
@@ -82,7 +82,7 @@
 
     @media (max-width: 576px) {
       .header-section {
-        height: 30vh;
+        height: 27vh;
       }
 
       .header-section h1 {
@@ -92,7 +92,7 @@
 
     @media (max-width: 400px) {
       .header-section {
-        height: 40vh;
+        height: 50vh;
       }
 
       .header-section h1 {
@@ -252,7 +252,7 @@
     <p>OUR EXPERTISE ENSURES YOUR VISION BECOMES REALITY</p>
     <p> <i class="fa-regular fa-circle-dot" style="margin-right: 10px;"></i>ARCHITECTURE   <i class="fa-regular fa-circle-dot" style="margin-right: 10px;margin-left: 10px;"></i> RENOVATION  </p>  <p><i class="fa-regular fa-circle-dot" style="margin-right: 10px;"></i>INTERIOR DESIGN    <i class="fa-regular fa-circle-dot" style="margin-right: 10px;margin-left: 10px;"></i>CONSTRUCTION </p>
     <div class="text-center">
-        <button class="btn" id="viewMoreButton" style="color:white;margin-bottom:20px;margin-top:20px;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;"><a href="{% url 'credential:about' %}" style="text-decoration: none;color:white;">ABOUT US</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
+        <button class="btn" id="viewMoreButton" style="box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);color:white;margin-bottom:20px;margin-top:20px;border-radius: 10px;background-color: #1c1c1c;padding:10px;"><a href="{% url 'credential:about' %}" style="text-decoration: none;color:white;">ABOUT US</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
       </div>
   </div>
   <style>
@@ -295,7 +295,7 @@
     <div class="row">
       <div class="col-md-6" id="completed">
         <a href="{% url 'cadapp:complete' %}">
-        <div class="card project-card" style="border-radius: 15px;">
+        <div class="card project-card" style="border-radius: 15px;box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);">
           <div class="image-overlay">
             <img src="/static/img/completed1.jpg" class="card-img-top" alt="Completed Project">
             <div class="overlay-text">
@@ -307,7 +307,7 @@
       </div>
       <div class="col-md-6">
         <a href="{% url 'cadapp:incomplete' %}">
-        <div class="card project-card">
+        <div class="card project-card" style="box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);">
           <div class="image-overlay">
             <img src="/static/img/caddall2.jpg" class="card-img-top" alt="Ongoing Project">
             <div class="overlay-text">
@@ -324,7 +324,7 @@
    <div class="container my-5">
     <div class="card lead-projects-card" style="padding: 20px;">
       <div id="leadProjectsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" style="border-radius: 15px;margin-top: -40px;box-shadow: 0 0 15px 5px rgba(1, 93, 230, 0.8);">
+        <div class="carousel-inner" style="border-radius: 15px;margin-top: -40px;box-shadow: 0 0 15px 5px rgba(147, 151, 70, 0.8);">
           <div class="carousel-item active">
             <img src="/static/img/sliderpic3.jpg" class="d-block w-100" alt="Lead Project 1">
           </div>
@@ -405,7 +405,7 @@
     </div>
 </div>
 <div class="text-center">
-    <button class="btn" data-toggle="modal" data-target="#leadProjectModal" style="color:white; margin-top: -40px; margin-bottom:60px; border-radius: 10px; background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%); padding:10px;">VIEW ALL<i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
+    <button class="btn" data-toggle="modal" data-target="#leadProjectModal" style="box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);color:white; margin-top: -30px; margin-bottom:60px; border-radius: 10px;background-color: #1c1c1c; padding:10px;">VIEW ALL<i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
 </div>
 
 <script>
@@ -443,27 +443,27 @@
     </div>
   </div>
   <div class="text-center">
-    <button class="btn" id="viewMoreButton" style="color:white;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;"><a href="{% url 'credential:viewinterior' %}" style="text-decoration: none;color:white;">INTERIOR GALLERY</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
+    <button class="btn" id="viewMoreButton" style="box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);color:white;border-radius: 10px;background-color: #1c1c1c;padding:10px;"><a href="{% url 'credential:viewinterior' %}" style="text-decoration: none;color:white;">INTERIOR GALLERY</a><i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 10px;"></i></button>
   </div>
   
   <!-- Enquiry Form -->
 <div class="container my-5" style="padding:30px;">
-  <h2 class="text-center mb-4">Enquiry Form</h2>
+  <h2 class="text-center mb-4">ENQUIRY FORM</h2>
   <form id="enquiryForm" action="{% url 'credential:index' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3">
-      <input type="text" class="form-control" placeholder="Name" name="name" required>
+      <input type="text" class="form-control" placeholder="Name" name="name" required style="background-color: #c2c2c2;">
     </div>
     <div class="mb-3">
-      <input type="email" class="form-control" placeholder="Email" name="email" required>
+      <input type="email" class="form-control" placeholder="Email" name="email" required style="background-color: #c2c2c2;">
     </div>
     <div class="mb-3">
-      <input type="tel" class="form-control" placeholder="Phone No." name="phone" required>
+      <input type="tel" class="form-control" placeholder="Phone No." name="phone" required style="background-color: #c2c2c2;">
     </div>
     <div class="mb-3">
-      <textarea class="form-control" rows="3" placeholder="Enquiry" name="message"></textarea>
+      <textarea class="form-control" rows="3" placeholder="Enquiry" name="message" style="background-color: #c2c2c2;"></textarea>
     </div>
-    <button type="submit" class="btn" style="width:100%;color:white;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;">SUBMIT</button>
+    <button type="submit" class="btn" style="box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);width:100%;color:white;border-radius: 10px;background-color: #1c1c1c;padding:10px;">SUBMIT</button>
   </form>
 </div>
 
