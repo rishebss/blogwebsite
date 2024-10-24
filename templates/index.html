@@ -349,8 +349,8 @@
   </div>
   <div class="modal fade" id="leadProjectModal" tabindex="-1" role="dialog" aria-labelledby="leadProjectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content" style="border-radius: 10px; background-color: #121212;">
-            <div class="modal-header">
+        <div class="modal-content" style="border-radius: 10px; background-color: #121212; border: none;"> <!-- Added border: none -->
+            <div class="modal-header" style="border: none;"> <!-- Added border: none -->
                 <h3 class="modal-title" id="leadProjectModalLabel" style="margin-left: 27%;">LEAD PROJECTS</h3>
             </div>
             <div class="modal-body" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none; background-color: #121212;">
@@ -391,16 +391,14 @@
                                 </div>
 
                                 <!-- More/Less toggle link -->
-                                
-                                    <a href="javascript:void(0);" class="toggle-more text-blue" onclick="toggleImages(this)" style="text-decoration: none;">More</a>
-                                
+                                <a href="javascript:void(0);" class="toggle-more text-blue" onclick="toggleImages(this)" style="text-decoration: none;">More</a>
                             </div>
-                            <hr>
+                            <hr style="border-color: #444;"> <!-- Optional: Change the hr color -->
                         </div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="border: none;"> <!-- Added border: none -->
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
