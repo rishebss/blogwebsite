@@ -349,45 +349,52 @@
   </div>
   <div class="modal fade" id="leadProjectModal" tabindex="-1" role="dialog" aria-labelledby="leadProjectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content" style="border-radius:10px;background-color: #121212;">
+        <div class="modal-content" style="border-radius: 10px; background-color: #121212;">
             <div class="modal-header">
-                <h3 class="modal-title" id="leadProjectModalLabel" style="margin-left:50px;">LEAD PROJECTS</h3>
-                
+                <h3 class="modal-title" id="leadProjectModalLabel" style="margin-left: 27%;">LEAD PROJECTS</h3>
             </div>
-            <div class="modal-body" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none;background-color: #121212;">
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto; scrollbar-width: none; background-color: #121212;">
                 <div class="container">
                     {% for lead in lead_list %}
-                        <div class="lead-item" >
-                          <h4 class="gold-text">{{ lead.luxtitle }}</h4>
+                        <div class="lead-item">
+                            <h4 class="gold-text">{{ lead.luxtitle }}</h4>
                             <div class="row">
-                                <div class="col-12 mb-3 mt-3" >
+                                <div class="col-12 mb-3 mt-3">
                                     <img src="{{ lead.photo.url }}" alt="Photo" class="img-fluid custom-img">
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <img src="{{ lead.photo1.url }}" alt="Photo1" class="img-fluid custom-img">
+                                <p class="text-white"><strong>Location:</strong> {{ lead.luxloc }}</p>
+                                <p class="text-white">{{ lead.luxdesc }}</p>
+                                
+                                <!-- Additional images wrapped in a more-images div -->
+                                <div class="more-images" style="display: none;">
+                                    <div class="col-12 mb-3">
+                                        <img src="{{ lead.photo1.url }}" alt="Photo1" class="img-fluid custom-img">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <img src="{{ lead.photo2.url }}" alt="Photo2" class="img-fluid custom-img">
+                                    </div>
+                                    {% if lead.photooptional %}
+                                    <div class="col-12 mb-3">
+                                        <img src="{{ lead.photooptional.url }}" alt="Photooptional" class="img-fluid custom-img">
+                                    </div>
+                                    {% endif %}
+                                    {% if lead.photooptional1 %}
+                                    <div class="col-12 mb-3">
+                                        <img src="{{ lead.photooptional1.url }}" alt="Photooptional1" class="img-fluid custom-img">
+                                    </div>
+                                    {% endif %}
+                                    {% if lead.photooptional2 %}
+                                    <div class="col-12 mb-3">
+                                        <img src="{{ lead.photooptional2.url }}" alt="Photooptional2" class="img-fluid custom-img">
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <img src="{{ lead.photo2.url }}" alt="Photo2" class="img-fluid custom-img">
-                                </div>
-                                {% if lead.photooptional %}
-                                <div class="col-12 mb-3">
-                                    <img src="{{ lead.photooptional.url }}" alt="Photooptional" class="img-fluid custom-img">
-                                </div>
-                                {% endif %}
-                                {% if lead.photooptional1 %}
-                                <div class="col-12 mb-3">
-                                    <img src="{{ lead.photooptional1.url }}" alt="Photooptional1" class="img-fluid custom-img">
-                                </div>
-                                {% endif %}
-                                {% if lead.photooptional2 %}
-                                <div class="col-12 mb-3">
-                                    <img src="{{ lead.photooptional2.url }}" alt="Photooptional2" class="img-fluid custom-img">
-                                </div>
-                                {% endif %}
+
+                                <!-- More/Less toggle link -->
+                                
+                                    <a href="javascript:void(0);" class="toggle-more text-blue" onclick="toggleImages(this)" style="text-decoration: none;">More</a>
+                                
                             </div>
-                            
-                            <p class="text-white"><strong>Location:</strong> {{ lead.luxloc }}</p>
-                            <p class="text-white">{{ lead.luxdesc }}</p>
                             <hr>
                         </div>
                     {% endfor %}
@@ -399,10 +406,25 @@
         </div>
     </div>
 </div>
-  <div class="text-center">
-    <button class="btn" data-toggle="modal" data-target="#leadProjectModal" style="color:white;margin-top: -40px;margin-bottom:60px;border-radius: 10px;background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);padding:10px;">VIEW PROJECTS</button>
-  </div>
-  
+<div class="text-center">
+    <button class="btn" data-toggle="modal" data-target="#leadProjectModal" style="color:white; margin-top: -40px; margin-bottom:60px; border-radius: 10px; background-color: #111927; background-image: radial-gradient(at 47% 33%, hsl(228.91, 77%, 40%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%); padding:10px;">VIEW PROJECTS</button>
+</div>
+
+<script>
+    function toggleImages(link) {
+        const moreImages = link.closest('.lead-item').querySelector('.more-images');
+        // Toggle visibility of the more-images div
+        if (moreImages.style.display === 'none' || moreImages.style.display === '') {
+            moreImages.style.display = 'block';
+            link.textContent = 'Less'; // Change to 'Less'
+        } else {
+            moreImages.style.display = 'none';
+            link.textContent = 'More'; // Change to 'More'
+        }
+    }
+
+    // No need to initialize here since the 'more-images' div is hidden by default in the HTML
+</script>
 
 <h2 class="text-center">INTERIOR WORKS</h2>
   <!-- Interior Work Swiper Cards -->
