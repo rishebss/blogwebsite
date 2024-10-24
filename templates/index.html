@@ -21,15 +21,17 @@
     }
 
     .navbar {
-        background:transparent;
-            backdrop-filter: blur(16px) saturate(180%);
+      background: transparent;
+    backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-            padding: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative; /* Ensure navbar contents stay within the viewport */
-            z-index: 999; /* Ensure navbar is above other elements */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Change from relative to fixed */
+    top: 0; /* Make it stick to the top */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 999; /* Ensure navbar is above other elements */
     }
 
     .header-section {
