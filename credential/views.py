@@ -5,18 +5,19 @@ from django.contrib import auth, messages
 
 from .forms import LuxForm, CadForm, LuxmodelForm
 from .models import Cad, Lux, Luxmodel, Interior
-
-
-
-
+from django.http import JsonResponse
 
 def index(request):
     if request.method == "POST":
         form = CadForm(request.POST)
         if form.is_valid():
             form.save()
-            # Redirect to a success page or do something else
-            return HttpResponseRedirect('/')
+            # Return a success response (JSON)
+            return JsonResponse({'message': 'Form submitted successfully!'}, status=200)
+        else:
+            # Return form errors if form is invalid
+            return JsonResponse({'errors': form.errors}, status=400)
+
     else:
         form = CadForm()
 
@@ -29,6 +30,12 @@ def index(request):
         'form': form,
     }
     return render(request, 'index.html', context)
+
+
+
+
+
+
 
 def dashboard(request):
     enquire = Cad.objects.all().order_by('-created_at')
